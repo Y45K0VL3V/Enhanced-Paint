@@ -7,4 +7,21 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Close_32px.png" />
+    <None Remove="maximize_button_32px.png" />
+    <None Remove="subtract_32px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.5" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Close_32px.png" />
+    <Resource Include="maximize_button_32px.png" />
+    <Resource Include="subtract_32px.png" />
+  </ItemGroup>
+
 </Project>

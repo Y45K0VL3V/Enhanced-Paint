@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yakov.OOP.EnhancedPaint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True">
+    
+    <Border Background="{StaticResource MaterialDesignDarkBackground}"
+            CornerRadius="5"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch">
+        <Grid>
 
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="5,5,0,0" Width="auto" Background="{DynamicResource MaterialDesignShadowBrush}" Grid.Row="0" 
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+                <DockPanel>
+                    <Label DockPanel.Dock="Left" Content="" FontSize="12" VerticalAlignment="Center" Margin="10,0,0,0" Width="auto"/>
+
+                    <Button x:Name="buttonClose" DockPanel.Dock="Right" Height="Auto" Width="24" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Margin="0,0,0,0" Click="buttonClose_Click">
+                        <Image Source="/Close_32px.png" Width="24"/>
+                    </Button>
+
+                    <Button x:Name="buttonMaximize" DockPanel.Dock="Right" Height="Auto" Width="24" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Margin="0,0,0,0" Click="buttonMaximize_Click">
+                        <Image Source="/maximize_button_32px.png" Width="24"/>
+                    </Button>
+
+                    <Button x:Name="buttonMinimize" DockPanel.Dock="Right" Height="auto" Width="24" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Margin="0,0,0,0" Click="buttonMinimize_Click">
+                        <Image Source="/subtract_32px.png" Width="24"/>
+                    </Button>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Border>
 </Window>
