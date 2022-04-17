@@ -23,3 +23,15 @@ C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\obj\D
 C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\obj\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.genruntimeconfig.cache
 C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\obj\Debug\net6.0-windows\ref\yakov.OOP.EnhancedPaint.dll
 C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Haley.Abstractions.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Haley.Extensions.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Haley.Helpers.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Haley.IOC.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Haley.MVVM.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Haley.WPF.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\protobuf-net.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\protobuf-net.Core.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\System.Management.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll

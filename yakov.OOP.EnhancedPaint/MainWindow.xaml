@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yakov.OOP.EnhancedPaint"
+        xmlns:hw="http://schemas.hpod9.com/haley/wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="500" Width="850"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -61,7 +62,35 @@
 
             <Border Background="{DynamicResource MaterialDesignCardBackground}" Grid.Column="1" Grid.Row="1">
                 <Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <hw:ColorPickerButton Width="110" Height="35" Background="Transparent" Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+                                              Margin="10,0" Content="Main color" FontFamily="Comic Sans MS, Verdana"
+                                              SelectedColor="{Binding MainColor}"/>
 
+                        <hw:ColorPickerButton Width="110" Height="35" Background="Transparent" Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
+                                              Margin="10,0" Content="Fill color" FontFamily="Comic Sans MS, Verdana"
+                                              SelectedColor="{Binding FillingColor}"/>
+                        <TextBox Margin="20,0,0,0" Width="100" Height="35" VerticalAlignment="Center"
+                                 materialDesign:HintAssist.Hint="Pen size" 
+                                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                 FontSize="16" FontFamily="Comic Sans MS, Verdana"
+                                 Text="{Binding PenSize}"/>
+
+                        <TextBox Margin="20,0,0,0" Width="100" Height="35" VerticalAlignment="Center"
+                                 materialDesign:HintAssist.Hint="Rounded val" 
+                                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                 FontSize="16" FontFamily="Comic Sans MS, Verdana" 
+                                 IsEnabled="{Binding IsRoundedFigure}" Text="{Binding RoundedSize}"/>
+                    </StackPanel>
+
+                    <TextBlock Margin="20,8,50,0" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                 FontSize="14" Text="width: "/>
+                    <TextBlock Margin="20,8,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"
+                                 FontSize="14" Text="{Binding ChosedFigureWidth}"/>
+                    <TextBlock Margin="20,0,50,8" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                 FontSize="14" Text="height: "/>
+                    <TextBlock Margin="20,0,10,8" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                 FontSize="14" Text="{Binding ChosedFigureHeight}"/>
                 </Grid>
             </Border>
 
@@ -125,57 +154,65 @@
 
                     <Separator VerticalAlignment="Bottom" Margin="0"/>
 
-                    <ListBox Grid.Row="1" VerticalAlignment="Top" Margin="0" Padding="0"
+                    <ListView Grid.Row="1" VerticalAlignment="Top" Margin="0" Padding="0"
                              Style="{StaticResource MaterialDesignToolVerticalToggleListBox}">
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Pointer" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="CursorPointer"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Pen" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Pen"/>
                             </StackPanel>
-                        </ListBoxItem>
+                        </ListViewItem>
 
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Line" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
-                                <materialDesign:PackIcon Width="35" Height="35" Kind="Minus"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Divide"/>
                             </StackPanel>
-                        </ListBoxItem>
+                        </ListViewItem>
 
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Rectangle" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Rectangle"/>
                             </StackPanel>
-                        </ListBoxItem>
+                        </ListViewItem>
 
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Rounded rect" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="SquareRounded"/>
                             </StackPanel>
-                        </ListBoxItem>
+                        </ListViewItem>
 
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Square" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Square"/>
                             </StackPanel>
-                        </ListBoxItem>
+                        </ListViewItem>
 
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Ellipse" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Ellipse"/>
                             </StackPanel>
-                        </ListBoxItem>
+                        </ListViewItem>
 
-                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,0">
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,0">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Circle" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Circle"/>
                             </StackPanel>
-                        </ListBoxItem>
-                    </ListBox>
+                        </ListViewItem>
+                    </ListView>
                     <Separator Grid.Row="1" Margin="0" VerticalAlignment="Bottom"/>
                 </Grid>
             </Border>

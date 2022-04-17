@@ -12,7 +12,18 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\yakov\.nuget\packages\" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)haley.mvvm\6.2.17\contentFiles\any\netcoreapp3.1\Notes.txt" Condition="Exists('$(NuGetPackageRoot)haley.mvvm\6.2.17\contentFiles\any\netcoreapp3.1\Notes.txt')">
+      <NuGetPackageId>Haley.MVVM</NuGetPackageId>
+      <NuGetPackageVersion>6.2.17</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>Notes.txt</Link>
+    </Content>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\yakov\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\yakov\.nuget\packages\materialdesignthemes\4.4.0</PkgMaterialDesignThemes>
   </PropertyGroup>
 </Project>
