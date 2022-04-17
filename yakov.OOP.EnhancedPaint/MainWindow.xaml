@@ -18,7 +18,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True">
-    
+
     <Border Background="{StaticResource MaterialDesignDarkBackground}"
             CornerRadius="5"
             VerticalAlignment="Stretch"
@@ -31,7 +31,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Border CornerRadius="5,5,0,0" Width="auto" Background="{DynamicResource MaterialDesignShadowBrush}" Grid.Row="0" 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="5,5,0,0" Width="auto" Background="{DynamicResource MaterialDesignShadowBrush}" Grid.Row="0" Grid.ColumnSpan="2" 
                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MouseLeftButtonDown="Border_MouseLeftButtonDown">
 
                 <DockPanel>
@@ -53,6 +58,134 @@
                     </Button>
                 </DockPanel>
             </Border>
+
+            <Border Background="{DynamicResource MaterialDesignCardBackground}" Grid.Column="1" Grid.Row="1">
+                <Grid>
+
+                </Grid>
+            </Border>
+
+            <Border x:Name="borderToolsMenu" 
+                    Background="{DynamicResource AttentionToActionBrush}" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" 
+                    Width="50" VerticalAlignment="Stretch">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <ToggleButton x:Name="buttonMenu" 
+                                  Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                                  Width="35" Height="35" Foreground="White"
+                                  HorizontalAlignment="Right" Margin="7.5,0">
+
+                        <ToggleButton.Triggers>
+
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="borderToolsMenu" 
+                                                                 To="175"
+                                                                 AutoReverse="False"
+                                                                 Duration="0:0:0.5">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseInOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <ColorAnimation Storyboard.TargetProperty="Foreground.Color" Storyboard.TargetName="buttonMenu"
+                                                                To="Purple" Duration="0:0:1" AutoReverse="True"
+                                                                RepeatBehavior="Forever"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Width" Storyboard.TargetName="borderToolsMenu"  
+                                                                 To="50"
+                                                                 AutoReverse="False"
+                                                                 Duration="0:0:0.5">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <QuarticEase EasingMode="EaseInOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <ColorAnimation Storyboard.TargetProperty="Foreground.Color" Storyboard.TargetName="buttonMenu"
+                                                                To="White" Duration="0:0:0.5"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
+
+                    <Separator VerticalAlignment="Bottom" Margin="0"/>
+
+                    <ListBox Grid.Row="1" VerticalAlignment="Top" Margin="0" Padding="0"
+                             Style="{StaticResource MaterialDesignToolVerticalToggleListBox}">
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Pen" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Pen"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Line" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Minus"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Rectangle" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Rectangle"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Rounded rect" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="SquareRounded"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Square" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Square"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Ellipse" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Ellipse"/>
+                            </StackPanel>
+                        </ListBoxItem>
+
+                        <ListBoxItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center" Margin="0,0,0,0">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Circle" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Circle"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                    <Separator Grid.Row="1" Margin="0" VerticalAlignment="Bottom"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1" Grid.Row="2">
+                <Canvas Background="White">
+                    
+                </Canvas>
+            </Border>
+            
         </Grid>
     </Border>
 </Window>
