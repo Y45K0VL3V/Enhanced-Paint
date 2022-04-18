@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Figures\yakov.OOP.EnhancedPaint.Tools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Close_32px.png" />
     <Resource Include="maximize_button_32px.png" />
     <Resource Include="subtract_32px.png" />

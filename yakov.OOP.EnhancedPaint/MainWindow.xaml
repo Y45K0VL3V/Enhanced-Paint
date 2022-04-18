@@ -60,16 +60,17 @@
                 </DockPanel>
             </Border>
 
-            <Border Background="{DynamicResource MaterialDesignCardBackground}" Grid.Column="1" Grid.Row="1">
-                <Grid>
+            <Border Background="{DynamicResource MaterialDesignCardBackground}" Grid.Column="1" Grid.Row="1" >
+                <Grid> 
                     <StackPanel Orientation="Horizontal">
                         <hw:ColorPickerButton Width="110" Height="35" Background="Transparent" Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
                                               Margin="10,0" Content="Main color" FontFamily="Comic Sans MS, Verdana"
-                                              SelectedColor="{Binding MainColor}"/>
+                                              SelectedColor="{Binding MainColor}" FontWeight="Medium"/>
 
                         <hw:ColorPickerButton Width="110" Height="35" Background="Transparent" Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
                                               Margin="10,0" Content="Fill color" FontFamily="Comic Sans MS, Verdana"
-                                              SelectedColor="{Binding FillingColor}"/>
+                                              SelectedColor="{Binding FillingColor}" FontWeight="Medium"/>
+
                         <TextBox Margin="20,0,0,0" Width="100" Height="35" VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="Pen size" 
                                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
@@ -84,13 +85,13 @@
                     </StackPanel>
 
                     <TextBlock Margin="20,8,50,0" VerticalAlignment="Top" HorizontalAlignment="Right"
-                                 FontSize="14" Text="width: "/>
+                                 FontSize="14" Text="width: " FontFamily="Comic Sans MS, Verdana"/>
                     <TextBlock Margin="20,8,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"
-                                 FontSize="14" Text="{Binding ChosedFigureWidth}"/>
+                                 FontSize="14" Text="{Binding ChosedFigureWidth}" FontFamily="Comic Sans MS, Verdana"/>
                     <TextBlock Margin="20,0,50,8" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                                 FontSize="14" Text="height: "/>
+                                 FontSize="14" Text="height: " FontFamily="Comic Sans MS, Verdana"/>
                     <TextBlock Margin="20,0,10,8" VerticalAlignment="Bottom" HorizontalAlignment="Right"
-                                 FontSize="14" Text="{Binding ChosedFigureHeight}"/>
+                                 FontSize="14" Text="{Binding ChosedFigureHeight}" FontFamily="Comic Sans MS, Verdana"/>
                 </Grid>
             </Border>
 
