@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1A624C4-EF95-4F10-AEA1-69E655EC8D29}</ProjectGuid>
+    <ProjectGuid>{97EDAB9E-9980-4AF5-A93A-C9EB9C27BFED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>yakov.OOP.EnhancedPaint.Tools</RootNamespace>
@@ -41,15 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Figures\Circle.cs" />
-    <Compile Include="Figures\Ellipse.cs" />
-    <Compile Include="Figures\FigureBase.cs" />
-    <Compile Include="Figures\Line.cs" />
     <Compile Include="Pen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Figures\Rect.cs" />
-    <Compile Include="Figures\RoundedRect.cs" />
-    <Compile Include="Figures\Square.cs" />
     <Compile Include="Tool.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

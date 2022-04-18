@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace yakov.OOP.EnhancedPaint.Tools
+namespace yakov.OOP.EnhancedPaint.Figures
 {
-    public abstract class FigureBase: Tool
+    public class Circle: Ellipse
     {
-
-
-
     }
 }

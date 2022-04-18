@@ -369,6 +369,15 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "yakov.OOP.EnhancedPaint.Figures/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Figures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Figures.dll": {}
+        }
+      },
       "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
         "type": "project",
         "compile": {
@@ -1040,10 +1049,15 @@
         "version.txt"
       ]
     },
+    "yakov.OOP.EnhancedPaint.Figures/1.0.0": {
+      "type": "project",
+      "path": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Figures.csproj",
+      "msbuildProject": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Figures.csproj"
+    },
     "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
       "type": "project",
-      "path": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Tools.csproj",
-      "msbuildProject": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Tools.csproj"
+      "path": "../yakov.OOP.EnhancedPaint.Tools/yakov.OOP.EnhancedPaint.Tools.csproj",
+      "msbuildProject": "../yakov.OOP.EnhancedPaint.Tools/yakov.OOP.EnhancedPaint.Tools.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1056,6 +1070,7 @@
       "Haley.WPF >= 5.2.10",
       "MaterialDesignColors >= 2.0.5",
       "MaterialDesignThemes >= 4.4.0",
+      "yakov.OOP.EnhancedPaint.Figures >= 1.0.0",
       "yakov.OOP.EnhancedPaint.Tools >= 1.0.0"
     ]
   },
@@ -1086,8 +1101,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Tools.csproj": {
-              "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Tools.csproj"
+            "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
+              "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj"
+            },
+            "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj": {
+              "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj"
             }
           }
         }

@@ -10,12 +10,8 @@ namespace yakov.OOP.EnhancedPaint.Tools
     {
         Pointer,
         Pen,
-        Line,
-        Rect,
-        RoundedRect,
-        Square,
-        Ellipse,
-        Circle
+        FigureDesigner,
+        Eraser
     }
     public abstract class Tool
     {
