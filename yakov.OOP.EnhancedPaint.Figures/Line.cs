@@ -8,5 +8,7 @@ namespace yakov.OOP.EnhancedPaint.Figures
 {
     public class Line: FigureBase
     {
+        public override FigureType FigureType { get; } = FigureType.Line;
+
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace yakov.OOP.EnhancedPaint.Figures
 {
-    public class Rect:FigureBase
+    public class Rect : FigureBase
     {
+        public override FigureType FigureType { get; } = FigureType.Rect;
     }
 }

@@ -15,6 +15,6 @@ namespace yakov.OOP.EnhancedPaint.Tools
     }
     public abstract class Tool
     {
-        public ToolType ToolType { get; set; }
+        public abstract ToolType ToolType { get; }
     }
 }

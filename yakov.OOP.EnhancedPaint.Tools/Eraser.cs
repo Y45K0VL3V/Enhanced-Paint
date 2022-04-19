@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace yakov.OOP.EnhancedPaint.Tools
 {
-    public class Pen: Tool
+    public class Eraser : Tool 
     {
-        public override ToolType ToolType { get; } = ToolType.Pen;
+        public override ToolType ToolType { get; } = ToolType.Eraser;
     }
 }

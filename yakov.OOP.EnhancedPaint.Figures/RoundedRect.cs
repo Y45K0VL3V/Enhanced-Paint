@@ -8,5 +8,8 @@ namespace yakov.OOP.EnhancedPaint.Figures
 {
     public class RoundedRect : Rect
     {
+
+        public override FigureType FigureType { get; } = FigureType.RoundedRect;
+
     }
 }
