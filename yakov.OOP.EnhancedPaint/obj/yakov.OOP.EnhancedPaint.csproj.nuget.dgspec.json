@@ -4,6 +4,36 @@
     "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.csproj": {}
   },
   "projects": {
+    "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj",
+        "projectName": "yakov.OOP.EnhancedPaint.Figures",
+        "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj",
+        "projectName": "yakov.OOP.EnhancedPaint.Tools",
+        "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Workspace\\yakov.OOP.EnhancedPaint.Workspace.csproj": {
       "restore": {
         "projectUniqueName": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Workspace\\yakov.OOP.EnhancedPaint.Workspace.csproj",
@@ -11,7 +41,14 @@
         "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Workspace\\yakov.OOP.EnhancedPaint.Workspace.csproj",
         "frameworks": {
           "net472": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj"
+              },
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj"
+              }
+            }
           }
         }
       },

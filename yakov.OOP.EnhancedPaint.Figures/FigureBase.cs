@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace yakov.OOP.EnhancedPaint.Figures
 {
@@ -17,7 +18,7 @@ namespace yakov.OOP.EnhancedPaint.Figures
         Circle
     }
 
-    public abstract class FigureBase
+    public abstract class FigureBase : IDisposable
     {
         public abstract FigureType FigureType { get; }
 
@@ -39,5 +40,12 @@ namespace yakov.OOP.EnhancedPaint.Figures
         {
             PosLeftTop = new Point(Math.Min(lbmDown.X, lbmUp.X), Math.Min(lbmDown.Y, lbmUp.Y));
         }
+
+        public void Dispose()
+        {
+            WindowsUIElement = null;
+        }
+
+        public UIElement WindowsUIElement { get; set; } 
     }
 }

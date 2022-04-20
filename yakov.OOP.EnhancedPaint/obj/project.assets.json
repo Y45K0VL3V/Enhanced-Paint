@@ -369,8 +369,30 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "yakov.OOP.EnhancedPaint.Figures/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Figures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Figures.dll": {}
+        }
+      },
+      "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Tools.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Tools.dll": {}
+        }
+      },
       "yakov.OOP.EnhancedPaint.Workspace/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "yakov.OOP.EnhancedPaint.Figures": "1.0.0",
+          "yakov.OOP.EnhancedPaint.Tools": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/yakov.OOP.EnhancedPaint.Workspace.dll": {}
         },
@@ -1039,6 +1061,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "yakov.OOP.EnhancedPaint.Figures/1.0.0": {
+      "type": "project",
+      "path": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Figures.csproj",
+      "msbuildProject": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Figures.csproj"
+    },
+    "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
+      "type": "project",
+      "path": "../yakov.OOP.EnhancedPaint.Tools/yakov.OOP.EnhancedPaint.Tools.csproj",
+      "msbuildProject": "../yakov.OOP.EnhancedPaint.Tools/yakov.OOP.EnhancedPaint.Tools.csproj"
     },
     "yakov.OOP.EnhancedPaint.Workspace/1.0.0": {
       "type": "project",
