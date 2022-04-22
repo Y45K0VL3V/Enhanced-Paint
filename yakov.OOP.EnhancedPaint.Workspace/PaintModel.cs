@@ -18,12 +18,13 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             Drawspace = drawspace;
             Figures.ListChanged += Figures_ListChanged;
         }
-
+        
+        private Dictionary<UIElement, FigureBase> UIToFigureElements = new Dictionary<UIElement, FigureBase>();  
         public BindingList<FigureBase> Figures { get; set; } = new BindingList<FigureBase>();
+
         public Canvas Drawspace { get; private set; }
 
         private Pointer _pointer = new Pointer();
-        private Pen _pen = new Pen();
         private Eraser _eraser = new Eraser();
         private FigureDesigner _figureDesigner = new FigureDesigner();
 
@@ -37,6 +38,9 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         public FigureBase CreateFigure(FigureType figureType)
         {
             FigureBase figure = null;
+
+            Figures.Add(figure);
+            UIToFigureElements.Add(figure.WindowsUIElement, figure);
 
             return figure;
         }

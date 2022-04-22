@@ -31,8 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,12 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorControl.cs" />
     <Compile Include="Eraser.cs" />
     <Compile Include="FigureDesigner.cs" />
-    <Compile Include="Pen.cs" />
     <Compile Include="Pointer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Figures\yakov.OOP.EnhancedPaint.Figures.csproj">
+      <Project>{D1A624C4-EF95-4F10-AEA1-69E655EC8D29}</Project>
+      <Name>yakov.OOP.EnhancedPaint.Figures</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

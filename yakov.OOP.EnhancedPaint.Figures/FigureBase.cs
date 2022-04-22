@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace yakov.OOP.EnhancedPaint.Figures
 
         public Color BorderColor { get; set; } = Color.Black;
 
-        public Color? FillColor { get; set; } = null;
+        public Color FillColor { get; set; } = Color.White;
 
 
         // Position on drawing place (optional).
@@ -46,6 +47,7 @@ namespace yakov.OOP.EnhancedPaint.Figures
             WindowsUIElement = null;
         }
 
+        [JsonIgnore]
         public UIElement WindowsUIElement { get; set; } 
     }
 }
