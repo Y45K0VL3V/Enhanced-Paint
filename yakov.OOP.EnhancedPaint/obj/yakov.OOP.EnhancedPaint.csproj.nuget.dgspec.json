@@ -26,7 +26,11 @@
         "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj",
         "frameworks": {
           "net472": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj"
+              }
+            }
           }
         }
       },

@@ -156,19 +156,13 @@
                     <Separator VerticalAlignment="Bottom" Margin="0"/>
 
                     <ListView Grid.Row="1" VerticalAlignment="Top" Margin="0" Padding="0"
-                             Style="{StaticResource MaterialDesignToolVerticalToggleListBox}">
+                             Style="{StaticResource MaterialDesignToolVerticalToggleListBox}"
+                             SelectionMode="Single">
 
                         <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
                                 <TextBlock Text="Pointer" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="CursorPointer"/>
-                            </StackPanel>
-                        </ListViewItem>
-
-                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
-                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
-                                <TextBlock Text="Pen" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
-                                <materialDesign:PackIcon Width="35" Height="35" Kind="Pen"/>
                             </StackPanel>
                         </ListViewItem>
 

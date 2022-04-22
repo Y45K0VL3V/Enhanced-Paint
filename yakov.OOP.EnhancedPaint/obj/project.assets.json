@@ -380,6 +380,9 @@
       },
       "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
         "type": "project",
+        "dependencies": {
+          "yakov.OOP.EnhancedPaint.Figures": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/yakov.OOP.EnhancedPaint.Tools.dll": {}
         },

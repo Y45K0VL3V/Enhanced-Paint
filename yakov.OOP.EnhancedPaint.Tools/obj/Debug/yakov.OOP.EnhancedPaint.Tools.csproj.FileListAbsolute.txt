@@ -1,0 +1,11 @@
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\bin\Debug\yakov.OOP.EnhancedPaint.Tools.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\bin\Debug\yakov.OOP.EnhancedPaint.Tools.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\bin\Debug\yakov.OOP.EnhancedPaint.Figures.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\bin\Debug\Newtonsoft.Json.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\bin\Debug\yakov.OOP.EnhancedPaint.Figures.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\bin\Debug\Newtonsoft.Json.xml
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\obj\Debug\yakov.OOP.EnhancedPaint.Tools.csproj.AssemblyReference.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\obj\Debug\yakov.OOP.EnhancedPaint.Tools.csproj.CoreCompileInputs.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\obj\Debug\yakov.OOP.EnhancedPaint.Tools.csproj.CopyComplete
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\obj\Debug\yakov.OOP.EnhancedPaint.Tools.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Tools\obj\Debug\yakov.OOP.EnhancedPaint.Tools.pdb
