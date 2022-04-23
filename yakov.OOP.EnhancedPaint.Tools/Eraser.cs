@@ -13,7 +13,7 @@ namespace yakov.OOP.EnhancedPaint.Tools
     {
         public override ToolType ToolType { get; } = ToolType.Eraser;
 
-        public UIElement SelectItemOnCanvas(Canvas canvas, Point clickedPos)
+        public UIElement SelectItemOnCanvas(Canvas canvas, System.Drawing.Point clickedPos)
         {
             for (int i = canvas.Children.Count - 1; i >= 0; i--)
             {

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Shapes;
 
 namespace yakov.OOP.EnhancedPaint.Figures
 {
@@ -23,11 +25,11 @@ namespace yakov.OOP.EnhancedPaint.Figures
     {
         public abstract FigureType FigureType { get; }
 
-        public double Width { get; set; }
+        public double Width { get; set; } = 0;
 
-        public double Height { get; set; }
+        public double Height { get; set; } = 0;
 
-        public byte BorderWidth { get; set; }
+        public byte BorderWidth { get; set; } = 0;
 
         public Color BorderColor { get; set; } = Color.Black;
 
@@ -35,19 +37,14 @@ namespace yakov.OOP.EnhancedPaint.Figures
 
 
         // Position on drawing place (optional).
-        public Point? PosLeftTop { get; set; } = new Point(0, 0);
+        public System.Drawing.Point? PosLeftTop { get; set; } = new System.Drawing.Point(0, 0);
 
-        public void SetPosition(Point lbmDown, Point lbmUp)
-        {
-            PosLeftTop = new Point(Math.Min(lbmDown.X, lbmUp.X), Math.Min(lbmDown.Y, lbmUp.Y));
-        }
+        [JsonIgnore]
+        public UIElement WindowsUIElement { get; set; }
 
         public void Dispose()
         {
             WindowsUIElement = null;
         }
-
-        [JsonIgnore]
-        public UIElement WindowsUIElement { get; set; } 
     }
 }

@@ -11,6 +11,6 @@ namespace yakov.OOP.EnhancedPaint.Tools
 {
     public interface ISelect
     {
-        UIElement SelectItemOnCanvas(Canvas canvas, Point clickedPos);
+        UIElement SelectItemOnCanvas(Canvas canvas, System.Drawing.Point clickedPos);
     }
 }

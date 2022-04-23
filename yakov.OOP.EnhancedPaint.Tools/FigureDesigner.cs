@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Shapes;
 using yakov.OOP.EnhancedPaint.Figures;
 
 namespace yakov.OOP.EnhancedPaint.Tools
@@ -11,49 +13,41 @@ namespace yakov.OOP.EnhancedPaint.Tools
     {
         public override ToolType ToolType { get; } = ToolType.FigureDesigner;
 
-        //public static Dictionary<>
-
-        private FigureBase CreateLine()
+        private static Dictionary<FigureType, CreateFigureDelegate> _createMethods = new Dictionary<FigureType, CreateFigureDelegate>()
         {
-            FigureBase obj = null;
+            [FigureType.Line] = CreateLine,
+            [FigureType.Rect] = CreateRect,
+            [FigureType.RoundedRect] = CreateRoundRect,
+            [FigureType.Square] = CreateSquare,
+            [FigureType.Ellipse] = CreateEllipse,
+            [FigureType.Circle] = CreateCircle
+        };
 
-            return obj;
+        public static FigureBase CreateFigure(FigureType figureType, Point canvasPoint)
+        {
+            FigureBase newFigure = _createMethods[figureType].Invoke();
+            newFigure.SetPosition(canvasPoint, canvasPoint);
+            
+            return newFigure;
         }
 
-        private FigureBase CreateRect()
-        {
-            FigureBase obj = null;
+        #region Create figure methods.
 
-            return obj;
-        }
+        private delegate FigureBase CreateFigureDelegate();
 
-        private FigureBase CreateRoundRect()
-        {
-            FigureBase obj = null;
+        private static FigureBase CreateLine() => new Figures.Line() { WindowsUIElement = new System.Windows.Shapes.Line() };
 
-            return obj;
-        }
+        private static FigureBase CreateRect() => new Figures.Rect() { WindowsUIElement = new System.Windows.Shapes.Rectangle() };
 
-        private FigureBase CreateSquare()
-        {
-            FigureBase obj = null;
+        private static FigureBase CreateRoundRect() => new Figures.RoundedRect() { WindowsUIElement = new System.Windows.Shapes.Rectangle() };
 
-            return obj;
-        }
+        private static FigureBase CreateSquare() => new Figures.Square() { WindowsUIElement = new System.Windows.Shapes.Rectangle() };
 
-        private FigureBase CreateCircle()
-        {
-            FigureBase obj = null;
+        private static FigureBase CreateCircle() => new Figures.Circle() { WindowsUIElement = new System.Windows.Shapes.Ellipse() };
 
-            return obj;
-        }
+        private static FigureBase CreateEllipse() => new Figures.Ellipse() { WindowsUIElement = new System.Windows.Shapes.Ellipse() };
 
-        private FigureBase CreateEllipse()
-        {
-            FigureBase obj = null;
-
-            return obj;
-        }
+        #endregion
 
     }
 }

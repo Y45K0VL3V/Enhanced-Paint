@@ -42,10 +42,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorControl.cs" />
     <Compile Include="Eraser.cs" />
+    <Compile Include="FigureBaseExtension.cs" />
     <Compile Include="FigureDesigner.cs" />
     <Compile Include="ISelect.cs" />
     <Compile Include="Pointer.cs" />
