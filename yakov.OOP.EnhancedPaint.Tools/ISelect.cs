@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace yakov.OOP.EnhancedPaint.Tools
 {
-    public enum ToolType
+    public interface ISelect
     {
-        Pointer,
-        FigureDesigner,
-        Eraser
-    }
-    public abstract class Tool
-    {
-        public abstract ToolType ToolType { get; }
+        UIElement SelectItemOnCanvas(Canvas canvas, Point clickedPos);
     }
 }

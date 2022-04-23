@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using yakov.OOP.EnhancedPaint.Figures;
@@ -19,7 +20,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             Figures.ListChanged += Figures_ListChanged;
         }
         
-        private Dictionary<UIElement, FigureBase> UIToFigureElements = new Dictionary<UIElement, FigureBase>();  
+        private Dictionary<UIElement, FigureBase> uiToFigureElements = new Dictionary<UIElement, FigureBase>();  
         public BindingList<FigureBase> Figures { get; set; } = new BindingList<FigureBase>();
 
         public Canvas Drawspace { get; private set; }
@@ -40,7 +41,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             FigureBase figure = null;
 
             Figures.Add(figure);
-            UIToFigureElements.Add(figure.WindowsUIElement, figure);
+            uiToFigureElements.Add(figure.WindowsUIElement, figure);
 
             return figure;
         }
@@ -54,20 +55,21 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         #region Eraser
 
-        public void DeleteFigure(Point figurePoint)
+        public void DeleteFigure(System.Drawing.Point figurePoint)
         {
-
+            var itemToDelete = _eraser.SelectItemOnCanvas(Drawspace, figurePoint);
+            Figures.Remove(uiToFigureElements[itemToDelete]);
+            uiToFigureElements.Remove(itemToDelete);
         }
 
         #endregion
 
         #region Pointer
 
-        public FigureBase SelectFigure(Point figurePoint)
+        public FigureBase SelectFigure(System.Drawing.Point figurePoint)
         {
-            FigureBase figure = null;
-
-            return figure;
+            ////TODO: Check on selecting null.
+            return uiToFigureElements[_pointer.SelectItemOnCanvas(Drawspace, figurePoint)];
         }
 
         #endregion

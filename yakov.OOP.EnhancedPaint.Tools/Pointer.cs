@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace yakov.OOP.EnhancedPaint.Tools
 {
-    public class Pointer : Tool
+    public class Pointer : Tool, ISelect
     {
         public override ToolType ToolType { get; } = ToolType.Pointer;
 
