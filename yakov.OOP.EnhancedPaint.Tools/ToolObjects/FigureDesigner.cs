@@ -35,6 +35,9 @@ namespace yakov.OOP.EnhancedPaint.Tools
             SetFillColor(newFigure);
             SetStrokeColor(newFigure);
             SetStrokeThickness(newFigure);
+            if(figureType == FigureType.RoundedRect)
+                SetRoundedBorder(newFigure as RoundedRect);
+            
             canvas.Children.Add(newFigure.WindowsUIElement);
 
             return newFigure;
@@ -76,6 +79,12 @@ namespace yakov.OOP.EnhancedPaint.Tools
         {
             (figure.WindowsUIElement as Shape).StrokeThickness = DrawingToolsControl.BorderWidth;
             figure.BorderWidth = DrawingToolsControl.BorderWidth;
+        }
+
+        public static void SetRoundedBorder(RoundedRect roundedRect)
+        {
+            (roundedRect.WindowsUIElement as System.Windows.Shapes.Rectangle).RadiusX = DrawingToolsControl.CornerRadius;
+            (roundedRect.WindowsUIElement as System.Windows.Shapes.Rectangle).RadiusY = DrawingToolsControl.CornerRadius;
         }
 
         #endregion
