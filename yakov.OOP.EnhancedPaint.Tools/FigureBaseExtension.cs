@@ -10,24 +10,53 @@ using yakov.OOP.EnhancedPaint.Figures;
 
 namespace yakov.OOP.EnhancedPaint.Tools
 {
+    // Here figure.PosLeftUp mean just current mouse position.
     internal static class FigureBaseExtension
     {
-        public static void SetPosition(this FigureBase figure, System.Drawing.Point lbmDown, System.Drawing.Point lbmUp)
+        public static void SetPosition(this FigureBase figure)
         {
-            figure.PosLeftTop = new System.Drawing.Point(Math.Min(lbmDown.X, lbmUp.X), Math.Min(lbmDown.Y, lbmUp.Y));
-            if (figure.WindowsUIElement != null)
+            if (figure.FigureType != FigureType.Square && figure.FigureType != FigureType.Circle)
             {
-                Canvas.SetLeft(figure.WindowsUIElement, figure.PosLeftTop.Value.X);
-                Canvas.SetTop(figure.WindowsUIElement, figure.PosLeftTop.Value.Y);
+                figure.PosLeftTop = new System.Drawing.Point(Math.Min(figure.PosLeftDown.X, figure.PosLeftUp.X), Math.Min(figure.PosLeftDown.Y, figure.PosLeftUp.Y));
+            }
+            else
+            {
+                double minSize = Math.Min(Math.Abs(figure.PosLeftUp.X - figure.PosLeftDown.X), Math.Abs(figure.PosLeftUp.Y - figure.PosLeftDown.Y));
+                int left = (int)(figure.PosLeftDown.X <= figure.PosLeftUp.X ? figure.PosLeftDown.X : figure.PosLeftDown.X - minSize);
+                int top = (int)(figure.PosLeftDown.Y <= figure.PosLeftUp.Y ? figure.PosLeftDown.Y : figure.PosLeftDown.Y - minSize);
+                figure.PosLeftTop = new System.Drawing.Point(left, top);
+            }
+
+            if (figure.WindowsUIElement != null && figure.FigureType != FigureType.Line)
+            {
+                Canvas.SetLeft(figure.WindowsUIElement, figure.PosLeftTop.X);
+                Canvas.SetTop(figure.WindowsUIElement, figure.PosLeftTop.Y);
             }
         }
 
-        public static void SetSize(this FigureBase figure, System.Drawing.Point lbmDown, System.Drawing.Point lbmCurr)
+        public static void SetSize(this FigureBase figure)
         {
-            figure.Height = Math.Abs(lbmCurr.Y - lbmDown.Y);
-            figure.Width = Math.Abs(lbmCurr.X - lbmDown.X);
-            (figure.WindowsUIElement as Shape).Width = figure.Width;
-            (figure.WindowsUIElement as Shape).Height = figure.Height;
+            figure.Height = Math.Abs(figure.PosLeftUp.Y - figure.PosLeftDown.Y);
+            figure.Width = Math.Abs(figure.PosLeftUp.X - figure.PosLeftDown.X);
+
+            if (figure.FigureType == FigureType.Square || figure.FigureType == FigureType.Circle)
+            {
+                double minSize = Math.Min(figure.Width, figure.Height);
+                (figure.Height, figure.Width) = (minSize, minSize);
+            }
+
+            if (figure.FigureType != FigureType.Line)
+            {
+                (figure.WindowsUIElement as Shape).Width = figure.Width;
+                (figure.WindowsUIElement as Shape).Height = figure.Height;
+            }
+            else
+            {
+                (figure.WindowsUIElement as System.Windows.Shapes.Line).X1 = figure.PosLeftDown.X;
+                (figure.WindowsUIElement as System.Windows.Shapes.Line).X2 = figure.PosLeftUp.X;
+                (figure.WindowsUIElement as System.Windows.Shapes.Line).Y1 = figure.PosLeftDown.Y;
+                (figure.WindowsUIElement as System.Windows.Shapes.Line).Y2 = figure.PosLeftUp.Y;
+            }
         }
     }
 }

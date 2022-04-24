@@ -28,7 +28,9 @@ namespace yakov.OOP.EnhancedPaint.Tools
         public FigureBase CreateFigure(FigureType figureType, Canvas canvas, Point canvasPoint)
         {
             FigureBase newFigure = _createMethods[figureType].Invoke();
-            newFigure.SetPosition(canvasPoint, canvasPoint);
+            newFigure.PosLeftDown = canvasPoint;
+            newFigure.PosLeftUp = canvasPoint;
+            newFigure.SetPosition();
 
             SetFillColor(newFigure);
             SetStrokeColor(newFigure);
@@ -66,7 +68,7 @@ namespace yakov.OOP.EnhancedPaint.Tools
 
         public static void SetStrokeColor(FigureBase figure)
         {
-            (figure.WindowsUIElement as Shape).Stroke = new SolidColorBrush(DrawingToolsControl.FillColor);
+            (figure.WindowsUIElement as Shape).Stroke = new SolidColorBrush(DrawingToolsControl.BorderColor);
             figure.BorderColor = DrawingToolsControl.BorderColor;
         }
 
@@ -78,10 +80,11 @@ namespace yakov.OOP.EnhancedPaint.Tools
 
         #endregion
 
-        public void SetSize(FigureBase figure, Point pointDown, Point pointCurr)
+        public void SetSize(FigureBase figure, Point pointCurr)
         {
-            figure.SetPosition(pointDown, pointCurr);
-            figure.SetSize(pointDown, pointCurr);
+            figure.PosLeftUp = pointCurr;
+            figure.SetPosition();
+            figure.SetSize();
         }
 
     }

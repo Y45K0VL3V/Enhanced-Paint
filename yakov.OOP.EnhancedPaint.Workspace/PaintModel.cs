@@ -47,7 +47,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         public void EditFigure(FigureBase activeFigure, System.Drawing.Point pointDown, System.Drawing.Point pointCurr)
         {
-            _figureDesigner.SetSize(activeFigure, pointDown, pointCurr);
+            _figureDesigner.SetSize(activeFigure, pointCurr);
         }
 
         public void DeleteFigure(System.Drawing.Point figurePoint)

@@ -31,7 +31,11 @@ namespace yakov.OOP.EnhancedPaint.Figures
 
 
         // Position on drawing place (optional).
-        public System.Drawing.Point? PosLeftTop { get; set; } = new System.Drawing.Point(0, 0);
+        public System.Drawing.Point PosLeftTop { get; set; } = new System.Drawing.Point(0, 0);
+
+        public System.Drawing.Point PosLeftDown { get; set; } = new System.Drawing.Point(0, 0);
+
+        public System.Drawing.Point PosLeftUp { get; set; } = new System.Drawing.Point(0, 0);
 
         [JsonIgnore]
         public UIElement WindowsUIElement { get; set; }
