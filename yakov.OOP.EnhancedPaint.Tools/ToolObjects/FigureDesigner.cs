@@ -25,7 +25,7 @@ namespace yakov.OOP.EnhancedPaint.Tools
             [FigureType.Circle] = CreateCircle
         };
 
-        public static FigureBase CreateFigure(FigureType figureType, Canvas canvas, Point canvasPoint)
+        public FigureBase CreateFigure(FigureType figureType, Canvas canvas, Point canvasPoint)
         {
             FigureBase newFigure = _createMethods[figureType].Invoke();
             newFigure.SetPosition(canvasPoint, canvasPoint);
@@ -77,6 +77,12 @@ namespace yakov.OOP.EnhancedPaint.Tools
         }
 
         #endregion
+
+        public void SetSize(FigureBase figure, Point pointDown, Point pointCurr)
+        {
+            figure.SetPosition(pointDown, pointCurr);
+            figure.SetSize(pointDown, pointCurr);
+        }
 
     }
 }

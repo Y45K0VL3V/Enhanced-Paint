@@ -25,9 +25,9 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         public Canvas Drawspace { get; private set; }
 
-        private Pointer _pointer = new Pointer();
-        private Eraser _eraser = new Eraser();
-        private FigureDesigner _figureDesigner = new FigureDesigner();
+        private readonly Pointer _pointer = new Pointer();
+        private readonly Eraser _eraser = new Eraser();
+        private readonly FigureDesigner _figureDesigner = new FigureDesigner();
 
         public void ClearDrawspace() => Drawspace.Children.Clear();
 
@@ -36,7 +36,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         public FigureBase CreateFigure(FigureType figureType, System.Drawing.Point canvasPoint)
         {
-            FigureBase figure = CreateFigure(figureType, canvasPoint);
+            FigureBase figure = _figureDesigner.CreateFigure(figureType, Drawspace, canvasPoint);
 
             Figures.Add(figure);
             uiToFigureElements.Add(figure.WindowsUIElement, figure);
@@ -44,9 +44,9 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             return figure;
         }
 
-        public void EditFigure(FigureBase activeFigure)
+        public void EditFigure(FigureBase activeFigure, System.Drawing.Point pointDown, System.Drawing.Point pointCurr)
         {
-
+            _figureDesigner.SetSize(activeFigure, pointDown, pointCurr);
         }
 
         public void DeleteFigure(System.Drawing.Point figurePoint)

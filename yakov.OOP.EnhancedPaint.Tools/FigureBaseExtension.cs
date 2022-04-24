@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Shapes;
 using yakov.OOP.EnhancedPaint.Figures;
 
 namespace yakov.OOP.EnhancedPaint.Tools
 {
-    public static class FigureBaseExtension
+    internal static class FigureBaseExtension
     {
         public static void SetPosition(this FigureBase figure, System.Drawing.Point lbmDown, System.Drawing.Point lbmUp)
         {
@@ -19,6 +20,14 @@ namespace yakov.OOP.EnhancedPaint.Tools
                 Canvas.SetLeft(figure.WindowsUIElement, figure.PosLeftTop.Value.X);
                 Canvas.SetTop(figure.WindowsUIElement, figure.PosLeftTop.Value.Y);
             }
+        }
+
+        public static void SetSize(this FigureBase figure, System.Drawing.Point lbmDown, System.Drawing.Point lbmCurr)
+        {
+            figure.Height = Math.Abs(lbmCurr.Y - lbmDown.Y);
+            figure.Width = Math.Abs(lbmCurr.X - lbmDown.X);
+            (figure.WindowsUIElement as Shape).Width = figure.Width;
+            (figure.WindowsUIElement as Shape).Height = figure.Height;
         }
     }
 }
