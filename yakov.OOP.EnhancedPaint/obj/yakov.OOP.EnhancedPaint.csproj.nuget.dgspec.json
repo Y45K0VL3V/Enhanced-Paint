@@ -84,6 +84,12 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj"
+              },
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj"
+              },
               "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Workspace\\yakov.OOP.EnhancedPaint.Workspace.csproj": {
                 "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Workspace\\yakov.OOP.EnhancedPaint.Workspace.csproj"
               }

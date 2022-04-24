@@ -16,6 +16,8 @@
           "Haley.WPF": "5.2.10",
           "MaterialDesignColors": "2.0.5",
           "MaterialDesignThemes": "4.4.0",
+          "yakov.OOP.EnhancedPaint.Figures": "1.0.0",
+          "yakov.OOP.EnhancedPaint.Tools": "1.0.0",
           "yakov.OOP.EnhancedPaint.Workspace": "1.0.0"
         },
         "runtime": {

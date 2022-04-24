@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yakov.OOP.EnhancedPaint"
         xmlns:hw="http://schemas.hpod9.com/haley/wpf"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="850"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -65,17 +66,17 @@
                     <StackPanel Orientation="Horizontal">
                         <hw:ColorPickerButton Width="110" Height="35" Background="Transparent" Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
                                               Margin="10,0" Content="Main color" FontFamily="Comic Sans MS, Verdana"
-                                              SelectedColor="{Binding MainColor}" FontWeight="Medium"/>
+                                              SelectedBrush="{Binding BorderColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Medium"/>
 
                         <hw:ColorPickerButton Width="110" Height="35" Background="Transparent" Foreground="{StaticResource PrimaryHueDarkForegroundBrush}"
                                               Margin="10,0" Content="Fill color" FontFamily="Comic Sans MS, Verdana"
-                                              SelectedColor="{Binding FillingColor}" FontWeight="Medium"/>
+                                              SelectedBrush="{Binding FillColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Medium"/>
 
                         <TextBox Margin="20,0,0,0" Width="100" Height="35" VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="Pen size" 
                                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                  FontSize="16" FontFamily="Comic Sans MS, Verdana"
-                                 Text="{Binding PenSize}"/>
+                                 Text="{Binding BorderWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                         <TextBox Margin="20,0,0,0" Width="100" Height="35" VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="Rounded val" 
@@ -157,7 +158,7 @@
 
                     <ListView Grid.Row="1" VerticalAlignment="Top" Margin="0" Padding="0"
                              Style="{StaticResource MaterialDesignToolVerticalToggleListBox}"
-                             SelectionMode="Single">
+                             SelectionMode="Single" SelectedIndex="{Binding ToolIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
 
                         <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
@@ -207,14 +208,34 @@
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Circle"/>
                             </StackPanel>
                         </ListViewItem>
+
+                        <ListViewItem Height="50" HorizontalContentAlignment="Right" Padding="0" VerticalContentAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Margin="7.5,0" HorizontalAlignment="Right">
+                                <TextBlock Text="Eraser" FontFamily="Comic Sans MS, Verdana" FontSize="17"  VerticalAlignment="Center" Margin="10,0"/>
+                                <materialDesign:PackIcon Width="35" Height="35" Kind="Eraser"/>
+                            </StackPanel>
+                        </ListViewItem>
                     </ListView>
                     <Separator Grid.Row="1" Margin="0" VerticalAlignment="Bottom"/>
                 </Grid>
             </Border>
 
             <Border Grid.Column="1" Grid.Row="2">
-                <Canvas Background="White">
-                    
+                <Canvas x:Name="drawspace" Background="White">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding LeftButtonDown}"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="MouseLeftButtonUp">
+                            <i:InvokeCommandAction Command="{Binding LeftButtonUp}"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="MouseMove">
+                            <i:InvokeCommandAction Command="{Binding LeftButtonDrag}"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="MouseEnter">
+                            <i:InvokeCommandAction Command="{Binding MouseCanvasEnter}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                 </Canvas>
             </Border>
             

@@ -29,6 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Figures\yakov.OOP.EnhancedPaint.Figures.csproj" />
+    <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Tools\yakov.OOP.EnhancedPaint.Tools.csproj" />
     <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Workspace\yakov.OOP.EnhancedPaint.Workspace.csproj" />
   </ItemGroup>
 

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using yakov.OOP.EnhancedPaint.Figures;
 using yakov.OOP.EnhancedPaint.Tools;
 
@@ -64,7 +65,6 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         }
 
         #endregion
-
 
         #region Event handlers
 

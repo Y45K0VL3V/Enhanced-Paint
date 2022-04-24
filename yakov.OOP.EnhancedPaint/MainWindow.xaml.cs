@@ -23,7 +23,7 @@ namespace yakov.OOP.EnhancedPaint
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new VM.MainVM();
+            DataContext = new VM.MainVM(drawspace);
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
