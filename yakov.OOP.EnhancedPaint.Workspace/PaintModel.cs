@@ -34,11 +34,9 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         #region Tools proxy.
 
-        #region FigureDesigner
-
-        public FigureBase CreateFigure(FigureType figureType)
+        public FigureBase CreateFigure(FigureType figureType, System.Drawing.Point canvasPoint)
         {
-            FigureBase figure = null;
+            FigureBase figure = CreateFigure(figureType, canvasPoint);
 
             Figures.Add(figure);
             uiToFigureElements.Add(figure.WindowsUIElement, figure);
@@ -51,20 +49,13 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         }
 
-        #endregion
-
-        #region Eraser
-
         public void DeleteFigure(System.Drawing.Point figurePoint)
         {
             var itemToDelete = _eraser.SelectItemOnCanvas(Drawspace, figurePoint);
+
             Figures.Remove(uiToFigureElements[itemToDelete]);
             uiToFigureElements.Remove(itemToDelete);
         }
-
-        #endregion
-
-        #region Pointer
 
         public FigureBase SelectFigure(System.Drawing.Point figurePoint)
         {
@@ -74,14 +65,12 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         #endregion
 
-        #endregion
-
 
         #region Event handlers
 
         private void Figures_ListChanged(object sender, ListChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         #endregion

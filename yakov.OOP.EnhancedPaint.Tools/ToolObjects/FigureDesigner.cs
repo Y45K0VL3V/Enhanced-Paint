@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Shapes;
 using yakov.OOP.EnhancedPaint.Figures;
 
@@ -23,11 +25,16 @@ namespace yakov.OOP.EnhancedPaint.Tools
             [FigureType.Circle] = CreateCircle
         };
 
-        public static FigureBase CreateFigure(FigureType figureType, Point canvasPoint)
+        public static FigureBase CreateFigure(FigureType figureType, Canvas canvas, Point canvasPoint)
         {
             FigureBase newFigure = _createMethods[figureType].Invoke();
             newFigure.SetPosition(canvasPoint, canvasPoint);
-            
+
+            SetFillColor(newFigure);
+            SetStrokeColor(newFigure);
+            SetStrokeThickness(newFigure);
+            canvas.Children.Add(newFigure.WindowsUIElement);
+
             return newFigure;
         }
 
@@ -46,6 +53,28 @@ namespace yakov.OOP.EnhancedPaint.Tools
         private static FigureBase CreateCircle() => new Figures.Circle() { WindowsUIElement = new System.Windows.Shapes.Ellipse() };
 
         private static FigureBase CreateEllipse() => new Figures.Ellipse() { WindowsUIElement = new System.Windows.Shapes.Ellipse() };
+
+        #endregion
+
+        #region Change figure view.
+
+        public static void SetFillColor(FigureBase figure)
+        {
+            (figure.WindowsUIElement as Shape).Fill = new SolidColorBrush(DrawingToolsControl.FillColor);
+            figure.FillColor = DrawingToolsControl.FillColor;
+        }
+
+        public static void SetStrokeColor(FigureBase figure)
+        {
+            (figure.WindowsUIElement as Shape).Stroke = new SolidColorBrush(DrawingToolsControl.FillColor);
+            figure.BorderColor = DrawingToolsControl.BorderColor;
+        }
+
+        public static void SetStrokeThickness(FigureBase figure)
+        {
+            (figure.WindowsUIElement as Shape).StrokeThickness = DrawingToolsControl.BorderWidth;
+            figure.BorderWidth = DrawingToolsControl.BorderWidth;
+        }
 
         #endregion
 

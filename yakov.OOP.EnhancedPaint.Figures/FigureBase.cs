@@ -1,13 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Shapes;
+using System.Windows.Media;
 
 namespace yakov.OOP.EnhancedPaint.Figures
 {
@@ -31,9 +25,9 @@ namespace yakov.OOP.EnhancedPaint.Figures
 
         public byte BorderWidth { get; set; } = 0;
 
-        public Color BorderColor { get; set; } = Color.Black;
+        public Color BorderColor { get; set; } = Color.FromRgb(0, 0, 0);
 
-        public Color FillColor { get; set; } = Color.White;
+        public Color FillColor { get; set; } = Color.FromRgb(255, 255, 255);
 
 
         // Position on drawing place (optional).
