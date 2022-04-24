@@ -34,7 +34,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             [4] = (ToolType.FigureDesigner, FigureType.Square),
             [5] = (ToolType.FigureDesigner, FigureType.Ellipse),
             [6] = (ToolType.FigureDesigner, FigureType.Circle),
-            [7] = (ToolType.FigureDesigner, null)
+            [7] = (ToolType.Eraser, null)
         };
 
         public ToolType Tool { get; set; } = ToolType.Pointer;
@@ -74,7 +74,10 @@ namespace yakov.OOP.EnhancedPaint.VM
         }
 
 
+        private FigureBase _activeFigure = null;
+
         private bool _isLeftButtonPressed = false;
+        private Point _pressedPos = new Point(0, 0);
 
         private RelayCommand _leftButtonDown;
         public RelayCommand LeftButtonDown
@@ -83,8 +86,26 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _leftButtonDown ?? (_leftButtonDown = new RelayCommand(obj =>
                 {
+                    if (_isLeftButtonPressed)
+                        return;
+
                     _isLeftButtonPressed = true;
-                    Point createPoint = PointConverter.ConvertToDrawing(Mouse.GetPosition(DrawingControl.Drawspace));
+                    _pressedPos = PointConverter.ConvertToDrawing(Mouse.GetPosition(DrawingControl.Drawspace));
+
+                    switch (Tool)
+                    {
+                        case ToolType.Pointer:
+                            break;
+
+                        case ToolType.FigureDesigner:
+                            _activeFigure = DrawingControl.CreateFigure((FigureType)FigureToCreate, _pressedPos);
+                            break;
+
+                        case ToolType.Eraser:
+                            DrawingControl.DeleteFigure(_pressedPos);
+                            break;
+
+                    }
                 }));
             }
         }
@@ -109,7 +130,24 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _leftButtonDrag ?? (_leftButtonDrag = new RelayCommand(obj =>
                 {
-                    Point _leftTopPos = PointConverter.ConvertToDrawing(Mouse.GetPosition(DrawingControl.Drawspace));
+                    Point currPoint = PointConverter.ConvertToDrawing(Mouse.GetPosition(DrawingControl.Drawspace));
+                    if (_isLeftButtonPressed)
+                    {
+                        switch (Tool)
+                        {
+                            case ToolType.Pointer:
+                                break;
+
+                            case ToolType.FigureDesigner:
+                                DrawingControl.EditFigure(_activeFigure, _pressedPos, currPoint);
+                                break;
+
+                            case ToolType.Eraser:
+                                DrawingControl.DeleteFigure(currPoint);
+                                break;
+
+                        }
+                    }
                 }));
             }
         }

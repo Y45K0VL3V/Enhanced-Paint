@@ -19,8 +19,9 @@ namespace yakov.OOP.EnhancedPaint.Tools
             {
                 if (canvas.Children[i].IsMouseOver)
                 {
-                    canvas.Children.Remove(canvas.Children[i]);
-                    return canvas.Children[i];
+                    UIElement element = canvas.Children[i];
+                    canvas.Children.Remove(element);
+                    return element;
                 }
             }
             return null;

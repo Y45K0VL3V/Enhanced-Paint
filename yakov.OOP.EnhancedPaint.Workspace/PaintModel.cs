@@ -54,8 +54,11 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         {
             var itemToDelete = _eraser.SelectItemOnCanvas(Drawspace, figurePoint);
 
-            Figures.Remove(uiToFigureElements[itemToDelete]);
-            uiToFigureElements.Remove(itemToDelete);
+            if (itemToDelete != null)
+            {
+                Figures.Remove(uiToFigureElements[itemToDelete]);
+                uiToFigureElements.Remove(itemToDelete);
+            }
         }
 
         public FigureBase SelectFigure(System.Drawing.Point figurePoint)
