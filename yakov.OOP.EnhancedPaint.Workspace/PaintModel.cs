@@ -50,6 +50,12 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             _figureDesigner.SetSize(activeFigure, pointCurr);
         }
 
+        public void ChangePosition(FigureBase activeFigure, int diffHeight, int diffWidth)
+        {
+            if (activeFigure.PosLeftTop.X - diffWidth >= 0 && activeFigure.PosLeftTop.Y - diffHeight >= 0)
+                _pointer.ChangePosition(activeFigure, diffHeight, diffWidth);
+        }
+
         public void DeleteFigure(System.Drawing.Point figurePoint)
         {
             var itemToDelete = _eraser.SelectItemOnCanvas(Drawspace, figurePoint);
@@ -63,8 +69,12 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         public FigureBase SelectFigure(System.Drawing.Point figurePoint)
         {
-            ////TODO: Check on selecting null.
-            return uiToFigureElements[_pointer.SelectItemOnCanvas(Drawspace, figurePoint)];
+            var selectedItem = _pointer.SelectItemOnCanvas(Drawspace, figurePoint);
+
+            if (selectedItem != null)
+                return uiToFigureElements[selectedItem];
+            else
+                return null;
         }
 
         #endregion

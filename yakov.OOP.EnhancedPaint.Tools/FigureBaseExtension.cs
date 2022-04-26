@@ -11,7 +11,7 @@ using yakov.OOP.EnhancedPaint.Figures;
 namespace yakov.OOP.EnhancedPaint.Tools
 {
     // Here figure.PosLeftUp mean just current mouse position.
-    internal static class FigureBaseExtension
+    public static class FigureBaseExtension
     {
         public static void SetPosition(this FigureBase figure)
         {

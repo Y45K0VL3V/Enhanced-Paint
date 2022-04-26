@@ -50,7 +50,9 @@ namespace yakov.OOP.EnhancedPaint.VM
             set
             {
                 (Tool, FigureToCreate) = _indexedTools[value];
+                _isLeftButtonPressed = false;
                 _toolIndex = value;
+                ActiveFigure = null;
                 OnPropertyChanged("ToolIndex");
             }
         }
@@ -74,10 +76,44 @@ namespace yakov.OOP.EnhancedPaint.VM
         }
 
 
+        public double ChosedFigureWidth
+        {
+            get => (double)(ActiveFigure?.Width);
+            set
+            {
+                OnPropertyChanged("ChosedFigureWidth");   
+            }
+        }
+        public double ChosedFigureHeight
+        {
+            get => (double)(ActiveFigure?.Height);
+            set
+            {
+                OnPropertyChanged("ChosedFigureHeight");
+            }
+        }
+
         private FigureBase _activeFigure = null;
+        public FigureBase ActiveFigure
+        {
+            get => _activeFigure;
+            set
+            {
+                if (value != null)
+                {
+                    ChosedFigureHeight = (double)(value?.Height);
+                    ChosedFigureWidth = (double)(value?.Width);
+                }
+
+                _activeFigure = value;
+            }
+        }
 
         private bool _isLeftButtonPressed = false;
         private Point _pressedPos = new Point(0, 0);
+        
+        // For pointer tool.
+        private Point _lastMovePoint = new Point(0, 0);
 
         private RelayCommand _leftButtonDown;
         public RelayCommand LeftButtonDown
@@ -95,10 +131,12 @@ namespace yakov.OOP.EnhancedPaint.VM
                     switch (Tool)
                     {
                         case ToolType.Pointer:
+                            ActiveFigure = DrawingControl.SelectFigure(_pressedPos);
+                            _lastMovePoint = _pressedPos;
                             break;
 
                         case ToolType.FigureDesigner:
-                            _activeFigure = DrawingControl.CreateFigure((FigureType)FigureToCreate, _pressedPos);
+                            ActiveFigure = DrawingControl.CreateFigure((FigureType)FigureToCreate, _pressedPos);
                             break;
 
                         case ToolType.Eraser:
@@ -118,7 +156,6 @@ namespace yakov.OOP.EnhancedPaint.VM
                 return _leftButtonUp ?? (_leftButtonUp = new RelayCommand(obj =>
                 {
                     _isLeftButtonPressed = false;
-                    Point _leftTopPos = PointConverter.ConvertToDrawing(Mouse.GetPosition(DrawingControl.Drawspace));
                 }));
             }
         }
@@ -136,10 +173,16 @@ namespace yakov.OOP.EnhancedPaint.VM
                         switch (Tool)
                         {
                             case ToolType.Pointer:
+                                if (ActiveFigure != null)
+                                    DrawingControl.ChangePosition(ActiveFigure, _lastMovePoint.Y - currPoint.Y, _lastMovePoint.X - currPoint.X);
+                                
+                                _lastMovePoint = currPoint;
                                 break;
 
                             case ToolType.FigureDesigner:
-                                DrawingControl.EditFigure(_activeFigure, _pressedPos, currPoint);
+                                DrawingControl.EditFigure(ActiveFigure, _pressedPos, currPoint);
+                                ChosedFigureHeight = (double)(ActiveFigure?.Height);
+                                ChosedFigureWidth = (double)(ActiveFigure?.Width);
                                 break;
 
                             case ToolType.Eraser:
