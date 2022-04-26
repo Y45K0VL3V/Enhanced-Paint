@@ -50,9 +50,12 @@ namespace yakov.OOP.EnhancedPaint.VM
             set
             {
                 (Tool, FigureToCreate) = _indexedTools[value];
+                
                 _isLeftButtonPressed = false;
                 _toolIndex = value;
+                _isEditMode = false;
                 ActiveFigure = null;
+                
                 OnPropertyChanged("ToolIndex");
             }
         }
@@ -114,6 +117,7 @@ namespace yakov.OOP.EnhancedPaint.VM
         
         // For pointer tool.
         private Point _lastMovePoint = new Point(0, 0);
+        private bool _isEditMode = false;
 
         private RelayCommand _leftButtonDown;
         public RelayCommand LeftButtonDown
@@ -131,7 +135,17 @@ namespace yakov.OOP.EnhancedPaint.VM
                     switch (Tool)
                     {
                         case ToolType.Pointer:
-                            ActiveFigure = DrawingControl.SelectFigure(_pressedPos);
+                            var newActiveFigure = DrawingControl.SelectFigure(_pressedPos);
+
+                            if (newActiveFigure == null)
+                                _isLeftButtonPressed = false;
+
+                            if (newActiveFigure != ActiveFigure)
+                                _isEditMode = false;
+
+                            ActiveFigure = newActiveFigure;
+                            SetFigureDataFromActive();
+
                             _lastMovePoint = _pressedPos;
                             break;
 
@@ -156,6 +170,13 @@ namespace yakov.OOP.EnhancedPaint.VM
                 return _leftButtonUp ?? (_leftButtonUp = new RelayCommand(obj =>
                 {
                     _isLeftButtonPressed = false;
+                    if (Tool == ToolType.Pointer)
+                    {
+                        if (!_isEditMode)
+                            _isEditMode = true;
+                        else
+                            _isEditMode = false;
+                    }
                 }));
             }
         }
@@ -174,15 +195,23 @@ namespace yakov.OOP.EnhancedPaint.VM
                         {
                             case ToolType.Pointer:
                                 if (ActiveFigure != null)
-                                    DrawingControl.ChangePosition(ActiveFigure, _lastMovePoint.Y - currPoint.Y, _lastMovePoint.X - currPoint.X);
+                                {
+                                    if (!_isEditMode)
+                                        DrawingControl.ChangePosition(ActiveFigure, _lastMovePoint.Y - currPoint.Y, _lastMovePoint.X - currPoint.X);
+                                    else
+                                    {
+                                        Point prevTopLeftPos = ActiveFigure.PosLeftTop;
+                                        DrawingControl.EditFigure(ActiveFigure, prevTopLeftPos, currPoint);
+                                        SetFigureDataFromActive();
+                                    }
+                                }
                                 
                                 _lastMovePoint = currPoint;
                                 break;
 
                             case ToolType.FigureDesigner:
                                 DrawingControl.EditFigure(ActiveFigure, _pressedPos, currPoint);
-                                ChosedFigureHeight = (double)(ActiveFigure?.Height);
-                                ChosedFigureWidth = (double)(ActiveFigure?.Width);
+                                SetFigureDataFromActive();
                                 break;
 
                             case ToolType.Eraser:
@@ -193,6 +222,12 @@ namespace yakov.OOP.EnhancedPaint.VM
                     }
                 }));
             }
+        }
+
+        private void SetFigureDataFromActive()
+        {
+            ChosedFigureHeight = ActiveFigure?.Height ?? 0;
+            ChosedFigureWidth = ActiveFigure?.Width ?? 0;
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
