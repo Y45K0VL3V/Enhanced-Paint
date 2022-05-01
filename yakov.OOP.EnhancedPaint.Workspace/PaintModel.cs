@@ -37,7 +37,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         public FigureBase CreateFigure(FigureType figureType, System.Drawing.Point canvasPoint)
         {
-            FigureBase figure = _figureDesigner.CreateFigure(figureType, Drawspace, canvasPoint);
+            FigureBase figure = _figureDesigner.CreateFigure(figureType, Drawspace, canvasPoint, true);
 
             Figures.Add(figure);
             uiToFigureElements.Add(figure.WindowsUIElement, figure);
@@ -47,7 +47,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         public void EditFigure(FigureBase activeFigure, System.Drawing.Point pointDown, System.Drawing.Point pointCurr)
         {
-            _figureDesigner.SetSize(activeFigure, pointCurr);
+            _figureDesigner.Resize(activeFigure, pointCurr);
         }
 
         public void DeleteFigure(System.Drawing.Point figurePoint)

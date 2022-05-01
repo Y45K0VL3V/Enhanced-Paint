@@ -12,7 +12,7 @@ namespace yakov.OOP.EnhancedPaint.Serialization
     {
         public List<FigureBase> Deserialize(string serializedFigures)
         {
-            throw new NotImplementedException();
+            return JsonConvert.DeserializeObject<List<FigureBase>>(serializedFigures);
         }
 
         public string Serialize(List<FigureBase> figures)

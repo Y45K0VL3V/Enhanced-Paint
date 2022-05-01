@@ -25,16 +25,20 @@ namespace yakov.OOP.EnhancedPaint.Tools
             [FigureType.Circle] = CreateCircle
         };
 
-        public FigureBase CreateFigure(FigureType figureType, Canvas canvas, Point canvasPoint)
+        public FigureBase CreateFigure(FigureType figureType, Canvas canvas, Point canvasPoint, bool isDefaultBrushes)
         {
             FigureBase newFigure = _createMethods[figureType].Invoke();
             newFigure.PosLeftDown = canvasPoint;
             newFigure.PosLeftUp = canvasPoint;
             newFigure.SetPosition();
 
-            SetFillColor(newFigure);
-            SetStrokeColor(newFigure);
-            SetStrokeThickness(newFigure);
+            if (isDefaultBrushes)
+            {
+                SetFillColor(newFigure);
+                SetStrokeColor(newFigure);
+                SetStrokeThickness(newFigure);
+            }
+           
             if(figureType == FigureType.RoundedRect)
                 SetRoundedBorder(newFigure as RoundedRect);
             
@@ -43,11 +47,19 @@ namespace yakov.OOP.EnhancedPaint.Tools
             return newFigure;
         }
 
-        public void DrawFigures(ref List<FigureBase> figures)
+        public void DrawFigures(ref List<FigureBase> figures, Canvas canvas)
         {
             for (int i = 0; i < figures.Count; i++)
             {
+                var loadingFigure = CreateFigure(figures[i].FigureType, canvas, figures[i].PosLeftDown, false);
 
+                SetFillColor(loadingFigure, figures[i].FillColor);
+                SetStrokeColor(loadingFigure, figures[i].BorderColor);
+                SetStrokeThickness(loadingFigure, figures[i].BorderWidth);
+
+                Resize(loadingFigure, figures[i].PosLeftUp);
+
+                figures[i] = loadingFigure;
             }
         }
 
@@ -109,7 +121,7 @@ namespace yakov.OOP.EnhancedPaint.Tools
 
         #endregion
 
-        public void SetSize(FigureBase figure, Point pointCurr)
+        public void Resize(FigureBase figure, Point pointCurr)
         {
             figure.PosLeftUp = pointCurr;
             figure.SetPosition();
