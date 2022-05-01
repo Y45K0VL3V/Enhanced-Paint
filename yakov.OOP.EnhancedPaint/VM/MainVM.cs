@@ -11,6 +11,7 @@ using yakov.OOP.EnhancedPaint.Tools;
 using yakov.OOP.EnhancedPaint.Figures;
 using System.Windows.Input;
 using System.Drawing;
+using yakov.OOP.EnhancedPaint.Serialization;
 
 namespace yakov.OOP.EnhancedPaint.VM
 {
@@ -228,6 +229,42 @@ namespace yakov.OOP.EnhancedPaint.VM
         {
             ChosedFigureHeight = ActiveFigure?.Height ?? 0;
             ChosedFigureWidth = ActiveFigure?.Width ?? 0;
+        }
+
+        private RelayCommand _clearDrawspace;
+        public RelayCommand ClearDrawspace
+        {
+            get
+            {
+                return _clearDrawspace ?? (_clearDrawspace = new RelayCommand(obj =>
+                {
+                    DrawingControl.ClearDrawspace();
+                }));
+            }
+        }
+
+        private RelayCommand _loadFigures;
+        public RelayCommand LoadFigures
+        {
+            get
+            {
+                return _loadFigures ?? (_loadFigures = new RelayCommand(obj =>
+                {
+                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), null);
+                }));
+            }
+        }
+
+        private RelayCommand _saveFigures;
+        public RelayCommand SaveFigures
+        {
+            get
+            {
+                return _saveFigures ?? (_saveFigures = new RelayCommand(obj =>
+                {
+                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), null);
+                }));
+            }
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

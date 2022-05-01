@@ -43,3 +43,7 @@ C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\D
 C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.Figures.pdb
 C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.Tools.pdb
 C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\Newtonsoft.Json.xml
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.Plugins.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.Serialization.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.Plugins.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint\bin\Debug\net6.0-windows\yakov.OOP.EnhancedPaint.Serialization.pdb

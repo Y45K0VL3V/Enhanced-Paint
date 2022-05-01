@@ -10,6 +10,10 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using yakov.OOP.EnhancedPaint.Figures;
 using yakov.OOP.EnhancedPaint.Tools;
+using yakov.OOP.EnhancedPaint.Serialization;
+using yakov.OOP.EnhancedPaint.Plugins.Archiving;
+using System.IO;
+using Microsoft.Win32;
 
 namespace yakov.OOP.EnhancedPaint.Workspace
 {
@@ -18,11 +22,10 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         public PaintModel(Canvas drawspace)
         {
             Drawspace = drawspace;
-            Figures.ListChanged += Figures_ListChanged;
         }
         
         private Dictionary<UIElement, FigureBase> uiToFigureElements = new Dictionary<UIElement, FigureBase>();  
-        public BindingList<FigureBase> Figures { get; set; } = new BindingList<FigureBase>();
+        public List<FigureBase> Figures { get; set; } = new List<FigureBase>();
 
         public Canvas Drawspace { get; private set; }
 
@@ -77,18 +80,50 @@ namespace yakov.OOP.EnhancedPaint.Workspace
                 _pointer.ChangePosition(activeFigure, diffHeight, diffWidth);
         }
 
-        
-
         #endregion
 
-        #region Event handlers
-
-        private void Figures_ListChanged(object sender, ListChangedEventArgs e)
+        public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver)
         {
-            
+            if (serializer == null)
+                return;
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                {
+                    var serializedFigures = serializer.Serialize(Figures);
+
+                    if (archiver != null)
+                    {
+                        ////TODO: Plugins.
+                    }
+
+                    writer.Write(serializedFigures);
+                }
         }
 
-        #endregion
+        public void LoadFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver)
+        {
+            if (serializer == null)
+                return;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                using (StreamReader reader = new StreamReader(openFileDialog.FileName))
+                {
+                    var serializedFigures = reader.ReadToEnd();
+
+                    if (archiver != null)
+                    {
+                        ////TODO: Plugins.
+                    }
+
+                    var tmpFigures = serializer.Deserialize(serializedFigures);
+                    _figureDesigner.DrawFigures(ref tmpFigures, Drawspace);
+
+                    Figures = tmpFigures;
+                }
+        }
 
     }
 }

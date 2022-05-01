@@ -378,6 +378,27 @@
           "bin/placeholder/yakov.OOP.EnhancedPaint.Figures.dll": {}
         }
       },
+      "yakov.OOP.EnhancedPaint.Plugins/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Plugins.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Plugins.dll": {}
+        }
+      },
+      "yakov.OOP.EnhancedPaint.Serialization/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "yakov.OOP.EnhancedPaint.Figures": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Serialization.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/yakov.OOP.EnhancedPaint.Serialization.dll": {}
+        }
+      },
       "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
         "type": "project",
         "dependencies": {
@@ -394,6 +415,8 @@
         "type": "project",
         "dependencies": {
           "yakov.OOP.EnhancedPaint.Figures": "1.0.0",
+          "yakov.OOP.EnhancedPaint.Plugins": "1.0.0",
+          "yakov.OOP.EnhancedPaint.Serialization": "1.0.0",
           "yakov.OOP.EnhancedPaint.Tools": "1.0.0"
         },
         "compile": {
@@ -1069,6 +1092,16 @@
       "type": "project",
       "path": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Figures.csproj",
       "msbuildProject": "../yakov.OOP.EnhancedPaint.Figures/yakov.OOP.EnhancedPaint.Figures.csproj"
+    },
+    "yakov.OOP.EnhancedPaint.Plugins/1.0.0": {
+      "type": "project",
+      "path": "../yakov.OOP.EnhancedPaint.Plugins/yakov.OOP.EnhancedPaint.Plugins.csproj",
+      "msbuildProject": "../yakov.OOP.EnhancedPaint.Plugins/yakov.OOP.EnhancedPaint.Plugins.csproj"
+    },
+    "yakov.OOP.EnhancedPaint.Serialization/1.0.0": {
+      "type": "project",
+      "path": "../yakov.OOP.EnhancedPaint.Serialization/yakov.OOP.EnhancedPaint.Serialization.csproj",
+      "msbuildProject": "../yakov.OOP.EnhancedPaint.Serialization/yakov.OOP.EnhancedPaint.Serialization.csproj"
     },
     "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
       "type": "project",

@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FigureSerializer.cs" />
-    <Compile Include="IFigureSerialize.cs" />
+    <Compile Include="IFigureSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

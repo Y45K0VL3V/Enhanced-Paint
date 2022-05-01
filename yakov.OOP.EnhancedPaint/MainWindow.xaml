@@ -7,7 +7,7 @@
         xmlns:hw="http://schemas.hpod9.com/haley/wpf"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="850"
+        Title="MainWindow" Height="650" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -24,7 +24,10 @@
     <Border Background="{StaticResource MaterialDesignDarkBackground}"
             CornerRadius="5"
             VerticalAlignment="Stretch"
-            HorizontalAlignment="Stretch">
+            HorizontalAlignment="Stretch"
+            BorderThickness="1"
+            BorderBrush="Black"
+            Margin="5">
         <Grid>
 
             <Grid.RowDefinitions>
@@ -72,11 +75,24 @@
                                               Margin="10,0" Content="Fill color" FontFamily="Comic Sans MS, Verdana"
                                               SelectedBrush="{Binding FillColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Medium"/>
 
-                        <TextBox Margin="20,0,0,0" Width="100" Height="35" VerticalAlignment="Center"
+                        <TextBox Margin="20,0" Width="100" Height="35" VerticalAlignment="Center"
                                  materialDesign:HintAssist.Hint="Pen size" 
                                  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                  FontSize="16" FontFamily="Comic Sans MS, Verdana"
                                  Text="{Binding BorderWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        
+                        <Button Content="Clear canvas" Margin="20,0,10,0" 
+                                FontSize="16" FontFamily="Comic Sans MS, Verdana"
+                                Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                                Command="{Binding ClearDrawspace}"/>
+                        <Button Content="Load figures" Margin="10,0" 
+                                FontSize="16" FontFamily="Comic Sans MS, Verdana"
+                                Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"
+                                Command="{Binding LoadFigures}"/>
+                        <Button Content="Save figures" Margin="10,0" 
+                                FontSize="16" FontFamily="Comic Sans MS, Verdana"
+                                Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"
+                                Command="{Binding SaveFigures}"/>
                     </StackPanel>
 
                     <TextBlock Margin="20,8,50,0" VerticalAlignment="Top" HorizontalAlignment="Right"
@@ -209,6 +225,7 @@
                                 <materialDesign:PackIcon Width="35" Height="35" Kind="Eraser"/>
                             </StackPanel>
                         </ListViewItem>
+
                     </ListView>
                     <Separator Grid.Row="1" Margin="0" VerticalAlignment="Bottom"/>
                 </Grid>

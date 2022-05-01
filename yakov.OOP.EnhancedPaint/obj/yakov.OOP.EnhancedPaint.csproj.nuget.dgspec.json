@@ -19,6 +19,40 @@
         "net472": {}
       }
     },
+    "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Plugins\\yakov.OOP.EnhancedPaint.Plugins.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Plugins\\yakov.OOP.EnhancedPaint.Plugins.csproj",
+        "projectName": "yakov.OOP.EnhancedPaint.Plugins",
+        "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Plugins\\yakov.OOP.EnhancedPaint.Plugins.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Serialization\\yakov.OOP.EnhancedPaint.Serialization.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Serialization\\yakov.OOP.EnhancedPaint.Serialization.csproj",
+        "projectName": "yakov.OOP.EnhancedPaint.Serialization",
+        "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Serialization\\yakov.OOP.EnhancedPaint.Serialization.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj": {
       "restore": {
         "projectUniqueName": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj",
@@ -48,6 +82,12 @@
             "projectReferences": {
               "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj": {
                 "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Figures\\yakov.OOP.EnhancedPaint.Figures.csproj"
+              },
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Plugins\\yakov.OOP.EnhancedPaint.Plugins.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Plugins\\yakov.OOP.EnhancedPaint.Plugins.csproj"
+              },
+              "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Serialization\\yakov.OOP.EnhancedPaint.Serialization.csproj": {
+                "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Serialization\\yakov.OOP.EnhancedPaint.Serialization.csproj"
               },
               "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj": {
                 "projectPath": "C:\\Учёба else\\OOP NEW\\yakov.OOP.EnhancedPaint\\yakov.OOP.EnhancedPaint.Tools\\yakov.OOP.EnhancedPaint.Tools.csproj"

@@ -215,6 +215,19 @@
           "yakov.OOP.EnhancedPaint.Figures.dll": {}
         }
       },
+      "yakov.OOP.EnhancedPaint.Plugins/1.0.0": {
+        "runtime": {
+          "yakov.OOP.EnhancedPaint.Plugins.dll": {}
+        }
+      },
+      "yakov.OOP.EnhancedPaint.Serialization/1.0.0": {
+        "dependencies": {
+          "yakov.OOP.EnhancedPaint.Figures": "1.0.0"
+        },
+        "runtime": {
+          "yakov.OOP.EnhancedPaint.Serialization.dll": {}
+        }
+      },
       "yakov.OOP.EnhancedPaint.Tools/1.0.0": {
         "dependencies": {
           "yakov.OOP.EnhancedPaint.Figures": "1.0.0"
@@ -226,6 +239,8 @@
       "yakov.OOP.EnhancedPaint.Workspace/1.0.0": {
         "dependencies": {
           "yakov.OOP.EnhancedPaint.Figures": "1.0.0",
+          "yakov.OOP.EnhancedPaint.Plugins": "1.0.0",
+          "yakov.OOP.EnhancedPaint.Serialization": "1.0.0",
           "yakov.OOP.EnhancedPaint.Tools": "1.0.0"
         },
         "runtime": {
@@ -417,6 +432,16 @@
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
     },
     "yakov.OOP.EnhancedPaint.Figures/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "yakov.OOP.EnhancedPaint.Plugins/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "yakov.OOP.EnhancedPaint.Serialization/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

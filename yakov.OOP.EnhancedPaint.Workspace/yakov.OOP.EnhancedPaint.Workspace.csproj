@@ -53,6 +53,14 @@
       <Project>{d1a624c4-ef95-4f10-aea1-69e655ec8d29}</Project>
       <Name>yakov.OOP.EnhancedPaint.Figures</Name>
     </ProjectReference>
+    <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Plugins\yakov.OOP.EnhancedPaint.Plugins.csproj">
+      <Project>{97FC26FC-9149-424A-92C7-4527BE3B3FD2}</Project>
+      <Name>yakov.OOP.EnhancedPaint.Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Serialization\yakov.OOP.EnhancedPaint.Serialization.csproj">
+      <Project>{027EC90B-19AB-49F7-9B3C-64DB9E0C0508}</Project>
+      <Name>yakov.OOP.EnhancedPaint.Serialization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\yakov.OOP.EnhancedPaint.Tools\yakov.OOP.EnhancedPaint.Tools.csproj">
       <Project>{97edab9e-9980-4af5-a93a-c9eb9c27bfed}</Project>
       <Name>yakov.OOP.EnhancedPaint.Tools</Name>

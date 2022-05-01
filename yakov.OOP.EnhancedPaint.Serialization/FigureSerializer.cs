@@ -8,14 +8,14 @@ using yakov.OOP.EnhancedPaint.Figures;
 
 namespace yakov.OOP.EnhancedPaint.Serialization
 {
-    public class FigureSerializer : IFigureSerialize<FigureBase>
+    public class FigureSerializer<T> : IFigureSerializer<T> where T : class
     {
-        public List<FigureBase> Deserialize(string serializedFigures)
+        public List<T> Deserialize(string serializedFigures)
         {
-            return JsonConvert.DeserializeObject<List<FigureBase>>(serializedFigures);
+            return JsonConvert.DeserializeObject<List<T>>(serializedFigures);
         }
 
-        public string Serialize(List<FigureBase> figures)
+        public string Serialize(List<T> figures)
         {
             return JsonConvert.SerializeObject(figures);
         }

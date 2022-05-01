@@ -1,0 +1,6 @@
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Plugins\bin\Debug\yakov.OOP.EnhancedPaint.Plugins.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Plugins\bin\Debug\yakov.OOP.EnhancedPaint.Plugins.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Plugins\obj\Debug\yakov.OOP.EnhancedPaint.Plugins.csproj.AssemblyReference.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Plugins\obj\Debug\yakov.OOP.EnhancedPaint.Plugins.csproj.CoreCompileInputs.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Plugins\obj\Debug\yakov.OOP.EnhancedPaint.Plugins.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.Plugins\obj\Debug\yakov.OOP.EnhancedPaint.Plugins.pdb
