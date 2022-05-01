@@ -24,7 +24,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             Drawspace = drawspace;
         }
         
-        private Dictionary<UIElement, FigureBase> uiToFigureElements = new Dictionary<UIElement, FigureBase>();  
+        private Dictionary<UIElement, FigureBase> _uiToFigureElements = new Dictionary<UIElement, FigureBase>();  
         public List<FigureBase> Figures { get; set; } = new List<FigureBase>();
 
         public Canvas Drawspace { get; private set; }
@@ -43,7 +43,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             FigureBase figure = _figureDesigner.CreateFigure(figureType, Drawspace, canvasPoint, true);
 
             Figures.Add(figure);
-            uiToFigureElements.Add(figure.WindowsUIElement, figure);
+            _uiToFigureElements.Add(figure.WindowsUIElement, figure);
 
             return figure;
         }
@@ -59,8 +59,8 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
             if (itemToDelete != null)
             {
-                Figures.Remove(uiToFigureElements[itemToDelete]);
-                uiToFigureElements.Remove(itemToDelete);
+                Figures.Remove(_uiToFigureElements[itemToDelete]);
+                _uiToFigureElements.Remove(itemToDelete);
             }
         }
 
@@ -69,7 +69,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             var selectedItem = _pointer.SelectItemOnCanvas(Drawspace, figurePoint);
 
             if (selectedItem != null)
-                return uiToFigureElements[selectedItem];
+                return _uiToFigureElements[selectedItem];
             else
                 return null;
         }
@@ -122,6 +122,9 @@ namespace yakov.OOP.EnhancedPaint.Workspace
                     _figureDesigner.DrawFigures(ref tmpFigures, Drawspace);
 
                     Figures = tmpFigures;
+
+                    for (int i = 0; i < Figures.Count; i++)
+                        _uiToFigureElements.Add(Figures[i].WindowsUIElement, Figures[i]);
                 }
         }
 

@@ -27,7 +27,8 @@
             HorizontalAlignment="Stretch"
             BorderThickness="1"
             BorderBrush="Black"
-            Margin="5">
+            Margin="0"
+            Padding="5">
         <Grid>
 
             <Grid.RowDefinitions>

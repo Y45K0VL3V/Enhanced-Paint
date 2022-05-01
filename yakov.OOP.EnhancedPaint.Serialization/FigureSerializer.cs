@@ -12,12 +12,12 @@ namespace yakov.OOP.EnhancedPaint.Serialization
     {
         public List<T> Deserialize(string serializedFigures)
         {
-            return JsonConvert.DeserializeObject<List<T>>(serializedFigures);
+            return JsonConvert.DeserializeObject<List<T>>(serializedFigures, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All });
         }
 
         public string Serialize(List<T> figures)
         {
-            return JsonConvert.SerializeObject(figures);
+            return JsonConvert.SerializeObject(figures, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.All });
         }
     }
 }
