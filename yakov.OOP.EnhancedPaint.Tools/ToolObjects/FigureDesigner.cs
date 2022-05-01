@@ -43,6 +43,14 @@ namespace yakov.OOP.EnhancedPaint.Tools
             return newFigure;
         }
 
+        public void DrawFigures(ref List<FigureBase> figures)
+        {
+            for (int i = 0; i < figures.Count; i++)
+            {
+
+            }
+        }
+
         #region Create figure methods.
 
         private delegate FigureBase CreateFigureDelegate();
@@ -65,20 +73,32 @@ namespace yakov.OOP.EnhancedPaint.Tools
 
         public static void SetFillColor(FigureBase figure)
         {
-            (figure.WindowsUIElement as Shape).Fill = new SolidColorBrush(DrawingToolsControl.FillColor);
-            figure.FillColor = DrawingToolsControl.FillColor;
+            SetFillColor(figure, DrawingToolsControl.FillColor);
+        }
+        public static void SetFillColor(FigureBase figure, System.Windows.Media.Color color)
+        {
+            (figure.WindowsUIElement as Shape).Fill = new SolidColorBrush(color);
+            figure.FillColor = color;
         }
 
         public static void SetStrokeColor(FigureBase figure)
         {
-            (figure.WindowsUIElement as Shape).Stroke = new SolidColorBrush(DrawingToolsControl.BorderColor);
-            figure.BorderColor = DrawingToolsControl.BorderColor;
+            SetStrokeColor(figure, DrawingToolsControl.BorderColor);
+        }
+        public static void SetStrokeColor(FigureBase figure, System.Windows.Media.Color color)
+        {
+            (figure.WindowsUIElement as Shape).Stroke = new SolidColorBrush(color);
+            figure.BorderColor = color;
         }
 
         public static void SetStrokeThickness(FigureBase figure)
         {
-            (figure.WindowsUIElement as Shape).StrokeThickness = DrawingToolsControl.BorderWidth;
-            figure.BorderWidth = DrawingToolsControl.BorderWidth;
+            SetStrokeThickness(figure, DrawingToolsControl.BorderWidth);
+        }
+        public static void SetStrokeThickness(FigureBase figure, byte width)
+        {
+            (figure.WindowsUIElement as Shape).StrokeThickness = width;
+            figure.BorderWidth = width;
         }
 
         public static void SetRoundedBorder(RoundedRect roundedRect)
