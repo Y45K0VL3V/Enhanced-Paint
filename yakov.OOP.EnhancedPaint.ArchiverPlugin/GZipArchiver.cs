@@ -16,26 +16,33 @@ namespace yakov.OOP.EnhancedPaint.ArchiverPlugin
     {
         public string Path { get; set; }
 
-        public string Archive(string data)
+        public void Archive(ref byte[] data)
         {
-            var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(data));
-            var resultStream = new MemoryStream();
-
-            var archiveStream = new GZipStream(resultStream, CompressionMode.Compress);
-            sourceStream.CopyTo(archiveStream);
-
-            return Encoding.UTF8.GetString(resultStream.ToArray());
+            using (var resultStream = new MemoryStream())
+            {
+                using (var archiveStream = new GZipStream(resultStream, CompressionMode.Compress))
+                {
+                    archiveStream.Write(data, 0, data.Length);
+                    archiveStream.Close();
+                    data = resultStream.ToArray();
+                }
+            }
         }
 
-        public string Dearchive(string archivedData)
+        public void Dearchive(ref byte[] archivedData)
         {
-            var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(archivedData));
-            var resultStream = new MemoryStream();
-
-            var archiveStream = new GZipStream(resultStream, CompressionMode.Decompress);
-            sourceStream.CopyTo(archiveStream);
-
-            return Encoding.UTF8.GetString(resultStream.ToArray());
+            using (var sourceStream = new MemoryStream(archivedData))
+            {
+                using (var resultStream = new MemoryStream())
+                {
+                    using (var archiveStream = new GZipStream(sourceStream, CompressionMode.Decompress))
+                    {
+                        archiveStream.CopyTo(resultStream);
+                        archiveStream.Close();
+                        archivedData = resultStream.ToArray();
+                    }
+                }
+            }
         }
     }
 }

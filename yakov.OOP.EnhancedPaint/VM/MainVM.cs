@@ -12,6 +12,8 @@ using yakov.OOP.EnhancedPaint.Figures;
 using System.Windows.Input;
 using System.Drawing;
 using yakov.OOP.EnhancedPaint.Serialization;
+using yakov.OOP.EnhancedPaint.Plugins;
+using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 
 namespace yakov.OOP.EnhancedPaint.VM
 {
@@ -250,7 +252,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _loadFigures ?? (_loadFigures = new RelayCommand(obj =>
                 {
-                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), null);
+                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), PluginLoader.Plugins[PluginType.Archiver].FirstOrDefault() as IArchiver);
                 }));
             }
         }
@@ -262,7 +264,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _saveFigures ?? (_saveFigures = new RelayCommand(obj =>
                 {
-                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), null);
+                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), PluginLoader.Plugins[PluginType.Archiver].FirstOrDefault() as IArchiver);
                 }));
             }
         }

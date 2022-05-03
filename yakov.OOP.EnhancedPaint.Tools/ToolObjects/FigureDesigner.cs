@@ -48,7 +48,7 @@ namespace yakov.OOP.EnhancedPaint.Tools
         }
         public void DrawFigures(ref List<FigureBase> figures, Canvas canvas)
         {
-            for (int i = 0; i < figures.Count; i++)
+            for (int i = 0; i < figures?.Count; i++)
             {
                 var loadingFigure = CreateFigure(figures[i].FigureType, canvas, figures[i].PosLeftDown, false);
 

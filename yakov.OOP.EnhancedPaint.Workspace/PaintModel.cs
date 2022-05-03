@@ -92,17 +92,14 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
             {
-                using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
+                var serializedFigures = Encoding.UTF8.GetBytes(serializer.Serialize(Figures));
+
+                if (archiver != null)
                 {
-                    var serializedFigures = serializer.Serialize(Figures);
-
-                    if (archiver != null)
-                    {
-                        ////TODO: Plugins.
-                    }
-
-                    writer.Write(serializedFigures);
+                    archiver.Archive(ref serializedFigures);
                 }
+
+                File.WriteAllBytes(saveFileDialog.FileName, serializedFigures);
             }
         }
 
@@ -114,23 +111,20 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
-                using (StreamReader reader = new StreamReader(openFileDialog.FileName))
+                var serializedFigures = File.ReadAllBytes(openFileDialog.FileName);
+
+                if (archiver != null)
                 {
-                    var serializedFigures = reader.ReadToEnd();
-
-                    if (archiver != null)
-                    {
-                        ////TODO: Plugins.
-                    }
-
-                    var tmpFigures = serializer.Deserialize(serializedFigures);
-                    _figureDesigner.DrawFigures(ref tmpFigures, Drawspace);
-
-                    Figures = tmpFigures;
-
-                    for (int i = 0; i < Figures.Count; i++)
-                        _uiToFigureElements.Add(Figures[i].WindowsUIElement, Figures[i]);
+                    archiver.Dearchive(ref serializedFigures);
                 }
+
+                var tmpFigures = serializer.Deserialize(Encoding.UTF8.GetString(serializedFigures));
+                _figureDesigner.DrawFigures(ref tmpFigures, Drawspace);
+
+                Figures = tmpFigures;
+
+                for (int i = 0; i < Figures?.Count; i++)
+                    _uiToFigureElements.Add(Figures[i].WindowsUIElement, Figures[i]);
             }
         }
         #endregion

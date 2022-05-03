@@ -10,7 +10,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins
     {
         public static string[] Paths = new string[]
         {
-
+            @"C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\bin\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.dll"
         };
     }
 }

@@ -8,7 +8,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins.Interfaces
 {
     public interface IArchiver: IPlugin
     {
-        string Archive(string data);
-        string Dearchive(string archivedData);
+        void Archive(ref byte[] data);
+        void Dearchive(ref byte[] archivedData);
     }
 }
