@@ -9,5 +9,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins.Interfaces
     public interface IPlugin
     {
         string Path { get; set; }
+
+
     }
 }

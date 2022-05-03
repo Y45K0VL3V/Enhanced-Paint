@@ -19,7 +19,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins
             }
         }
 
-        public static List<IPlugin> Plugins = new List<IPlugin>();
+        public static Dictionary<PluginType, List<IPlugin>> Plugins = new Dictionary<PluginType, List<IPlugin>>();
 
         public static void SetPlugin(string pluginPath)
         {
@@ -53,8 +53,17 @@ namespace yakov.OOP.EnhancedPaint.Plugins
                             return;
                         }
 
-                        //Get the plugin
-                        Plugins.Add(Activator.CreateInstance(pluginClass) as IPlugin);
+                        IPlugin newPlugin = Activator.CreateInstance(pluginClass) as IPlugin;
+                        try
+                        {
+                            Plugins[pluginType].Add(newPlugin);
+                        }
+                        catch (KeyNotFoundException)
+                        {
+                            Plugins.Add(pluginType, new List<IPlugin>() { newPlugin });
+                        }
+                        catch { }
+                        
                         return;
                     }
                     return;

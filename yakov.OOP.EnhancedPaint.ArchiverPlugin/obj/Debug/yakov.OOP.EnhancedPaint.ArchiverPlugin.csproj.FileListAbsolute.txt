@@ -1,0 +1,9 @@
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\bin\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\bin\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\bin\Debug\yakov.OOP.EnhancedPaint.Plugins.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\bin\Debug\yakov.OOP.EnhancedPaint.Plugins.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\obj\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.csproj.AssemblyReference.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\obj\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.csproj.CoreCompileInputs.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\obj\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.csproj.CopyComplete
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\obj\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.ArchiverPlugin\obj\Debug\yakov.OOP.EnhancedPaint.ArchiverPlugin.pdb

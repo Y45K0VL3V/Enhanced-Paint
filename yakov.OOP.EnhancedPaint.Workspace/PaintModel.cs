@@ -14,6 +14,7 @@ using yakov.OOP.EnhancedPaint.Serialization;
 using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 using System.IO;
 using Microsoft.Win32;
+using yakov.OOP.EnhancedPaint.Plugins;
 
 namespace yakov.OOP.EnhancedPaint.Workspace
 {
