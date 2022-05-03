@@ -11,7 +11,7 @@ using System.Windows.Media;
 using yakov.OOP.EnhancedPaint.Figures;
 using yakov.OOP.EnhancedPaint.Tools;
 using yakov.OOP.EnhancedPaint.Serialization;
-using yakov.OOP.EnhancedPaint.Plugins.Archiving;
+using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 using System.IO;
 using Microsoft.Win32;
 
@@ -82,6 +82,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
         #endregion
 
+        #region Figures backup processing.
         public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver)
         {
             if (serializer == null)
@@ -89,6 +90,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
+            {
                 using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName))
                 {
                     var serializedFigures = serializer.Serialize(Figures);
@@ -100,6 +102,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
                     writer.Write(serializedFigures);
                 }
+            }
         }
 
         public void LoadFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver)
@@ -109,6 +112,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
+            {
                 using (StreamReader reader = new StreamReader(openFileDialog.FileName))
                 {
                     var serializedFigures = reader.ReadToEnd();
@@ -126,7 +130,9 @@ namespace yakov.OOP.EnhancedPaint.Workspace
                     for (int i = 0; i < Figures.Count; i++)
                         _uiToFigureElements.Add(Figures[i].WindowsUIElement, Figures[i]);
                 }
+            }
         }
+        #endregion
 
     }
 }

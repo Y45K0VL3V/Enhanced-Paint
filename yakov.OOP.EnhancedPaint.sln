@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yakov.OOP.EnhancedPaint.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yakov.OOP.EnhancedPaint.Plugins", "yakov.OOP.EnhancedPaint.Plugins\yakov.OOP.EnhancedPaint.Plugins.csproj", "{97FC26FC-9149-424A-92C7-4527BE3B3FD2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginsRealization", "PluginsRealization", "{D35F8512-37AE-4317-A9AB-40BEFF2B7FD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yakov.OOP.EnhancedPaint.ArchiverPlugin", "yakov.OOP.EnhancedPaint.ArchiverPlugin\yakov.OOP.EnhancedPaint.ArchiverPlugin.csproj", "{88B18169-185B-473F-A094-0B3AF61F2B94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,9 +49,16 @@ Global
 		{97FC26FC-9149-424A-92C7-4527BE3B3FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97FC26FC-9149-424A-92C7-4527BE3B3FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97FC26FC-9149-424A-92C7-4527BE3B3FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B18169-185B-473F-A094-0B3AF61F2B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B18169-185B-473F-A094-0B3AF61F2B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B18169-185B-473F-A094-0B3AF61F2B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B18169-185B-473F-A094-0B3AF61F2B94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88B18169-185B-473F-A094-0B3AF61F2B94} = {D35F8512-37AE-4317-A9AB-40BEFF2B7FD3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DB5E89A-EA11-4C75-BA89-430E314729EB}

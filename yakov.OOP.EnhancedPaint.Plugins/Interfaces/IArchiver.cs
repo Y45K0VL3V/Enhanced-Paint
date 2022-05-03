@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace yakov.OOP.EnhancedPaint.Plugins.Archiving
+namespace yakov.OOP.EnhancedPaint.Plugins.Interfaces
 {
     public interface IArchiver
     {
-        
+        string Archive(string data);
+        string Dearchive(string archivedData);
     }
 }

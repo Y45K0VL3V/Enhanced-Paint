@@ -10,6 +10,6 @@ namespace yakov.OOP.EnhancedPaint.Tools
 
         public static byte BorderWidth { get; set; } = 1;
 
-        public static byte CornerRadius { get; set; } = 5;
+        //public static byte CornerRadius { get; set; } = 5;
     }
 }

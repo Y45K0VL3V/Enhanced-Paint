@@ -24,11 +24,7 @@
     <Border Background="{StaticResource MaterialDesignDarkBackground}"
             CornerRadius="5"
             VerticalAlignment="Stretch"
-            HorizontalAlignment="Stretch"
-            BorderThickness="1"
-            BorderBrush="Black"
-            Margin="0"
-            Padding="5">
+            HorizontalAlignment="Stretch">
         <Grid>
 
             <Grid.RowDefinitions>

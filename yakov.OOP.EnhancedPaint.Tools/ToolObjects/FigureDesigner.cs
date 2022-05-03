@@ -40,13 +40,12 @@ namespace yakov.OOP.EnhancedPaint.Tools
             }
            
             if(figureType == FigureType.RoundedRect)
-                SetRoundedBorder(newFigure as RoundedRect);
+                SetRoundedBorder(newFigure as RoundedRect, (newFigure as RoundedRect).CornerRadius);
             
             canvas.Children.Add(newFigure.WindowsUIElement);
 
             return newFigure;
         }
-
         public void DrawFigures(ref List<FigureBase> figures, Canvas canvas)
         {
             for (int i = 0; i < figures.Count; i++)
@@ -56,6 +55,8 @@ namespace yakov.OOP.EnhancedPaint.Tools
                 SetFillColor(loadingFigure, figures[i].FillColor);
                 SetStrokeColor(loadingFigure, figures[i].BorderColor);
                 SetStrokeThickness(loadingFigure, figures[i].BorderWidth);
+                if (loadingFigure is RoundedRect)
+                    SetRoundedBorder(loadingFigure as RoundedRect, (figures[i] as RoundedRect).CornerRadius);
 
                 Resize(loadingFigure, figures[i].PosLeftUp);
 
@@ -113,10 +114,11 @@ namespace yakov.OOP.EnhancedPaint.Tools
             figure.BorderWidth = width;
         }
 
-        public static void SetRoundedBorder(RoundedRect roundedRect)
+        public static void SetRoundedBorder(RoundedRect roundedRect, byte radius)
         {
-            (roundedRect.WindowsUIElement as System.Windows.Shapes.Rectangle).RadiusX = DrawingToolsControl.CornerRadius;
-            (roundedRect.WindowsUIElement as System.Windows.Shapes.Rectangle).RadiusY = DrawingToolsControl.CornerRadius;
+            roundedRect.CornerRadius = radius;
+            (roundedRect.WindowsUIElement as System.Windows.Shapes.Rectangle).RadiusX = roundedRect.CornerRadius;
+            (roundedRect.WindowsUIElement as System.Windows.Shapes.Rectangle).RadiusY = roundedRect.CornerRadius;
         }
 
         #endregion

@@ -10,6 +10,6 @@ namespace yakov.OOP.EnhancedPaint.Figures
     {
 
         public override FigureType FigureType { get; } = FigureType.RoundedRect;
-
+        public byte CornerRadius { get; set; } = 5;
     }
 }
