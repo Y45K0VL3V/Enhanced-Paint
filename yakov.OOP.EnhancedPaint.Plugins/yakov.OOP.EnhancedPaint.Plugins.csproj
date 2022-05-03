@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IPlugin.cs" />
+    <Compile Include="LoadingPlugins.cs" />
+    <Compile Include="PluginLoader.cs" />
     <Compile Include="PluginAttribute.cs" />
     <Compile Include="PluginType.cs" />
     <Compile Include="Interfaces\IArchiver.cs" />

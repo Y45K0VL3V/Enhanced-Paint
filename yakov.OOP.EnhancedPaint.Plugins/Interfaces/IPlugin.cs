@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace yakov.OOP.EnhancedPaint.Plugins.Interfaces
 {
-    public interface IArchiver: IPlugin
+    public interface IPlugin
     {
-        string Archive(string data);
-        string Dearchive(string archivedData);
+        string Path { get; set; }
     }
 }
