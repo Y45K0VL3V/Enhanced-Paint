@@ -245,6 +245,24 @@ namespace yakov.OOP.EnhancedPaint.VM
             }
         }
 
+        private bool _isArchiving = false;
+        public bool IsArchiving
+        {
+            get => _isArchiving;
+            set
+            {
+                if (value)
+                    _archiver = PluginLoader.Plugins[PluginType.Archiver].FirstOrDefault() as IArchiver;
+                else
+                    _archiver = null;
+
+                _isArchiving = value;
+                OnPropertyChanged("IsArchiving");
+            }
+        }
+
+        private IArchiver _archiver = null;
+
         private RelayCommand _loadFigures;
         public RelayCommand LoadFigures
         {
@@ -252,7 +270,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _loadFigures ?? (_loadFigures = new RelayCommand(obj =>
                 {
-                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), PluginLoader.Plugins[PluginType.Archiver].FirstOrDefault() as IArchiver);
+                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), _archiver);
                 }));
             }
         }
@@ -264,7 +282,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _saveFigures ?? (_saveFigures = new RelayCommand(obj =>
                 {
-                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), PluginLoader.Plugins[PluginType.Archiver].FirstOrDefault() as IArchiver);
+                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), _archiver);
                 }));
             }
         }

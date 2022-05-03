@@ -94,12 +94,16 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             {
                 var serializedFigures = Encoding.UTF8.GetBytes(serializer.Serialize(Figures));
 
-                if (archiver != null)
+                try
                 {
-                    archiver.Archive(ref serializedFigures);
-                }
+                    if (archiver != null)
+                    {
+                        archiver.Archive(ref serializedFigures);
+                    }
 
-                File.WriteAllBytes(saveFileDialog.FileName, serializedFigures);
+                    File.WriteAllBytes(saveFileDialog.FileName, serializedFigures);
+                }
+                catch { }
             }
         }
 
@@ -113,18 +117,22 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             {
                 var serializedFigures = File.ReadAllBytes(openFileDialog.FileName);
 
-                if (archiver != null)
+                try
                 {
-                    archiver.Dearchive(ref serializedFigures);
+                    if (archiver != null)
+                    {
+                        archiver.Dearchive(ref serializedFigures);
+                    }
+
+                    var tmpFigures = serializer.Deserialize(Encoding.UTF8.GetString(serializedFigures));
+                    _figureDesigner.DrawFigures(ref tmpFigures, Drawspace);
+
+                    Figures = tmpFigures;
+
+                    for (int i = 0; i < Figures?.Count; i++)
+                        _uiToFigureElements.Add(Figures[i].WindowsUIElement, Figures[i]);
                 }
-
-                var tmpFigures = serializer.Deserialize(Encoding.UTF8.GetString(serializedFigures));
-                _figureDesigner.DrawFigures(ref tmpFigures, Drawspace);
-
-                Figures = tmpFigures;
-
-                for (int i = 0; i < Figures?.Count; i++)
-                    _uiToFigureElements.Add(Figures[i].WindowsUIElement, Figures[i]);
+                catch { }
             }
         }
         #endregion

@@ -162,8 +162,8 @@
                     </ToggleButton>
 
                     <Separator VerticalAlignment="Bottom" Margin="0"/>
-
-                    <ListView Grid.Row="1" VerticalAlignment="Top" Margin="0" Padding="0"
+                    <StackPanel Grid.Row="1">
+                        <ListView VerticalAlignment="Top" Margin="0" Padding="0"
                              Style="{StaticResource MaterialDesignToolVerticalToggleListBox}"
                              SelectionMode="Single" SelectedIndex="{Binding ToolIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
 
@@ -223,8 +223,18 @@
                             </StackPanel>
                         </ListViewItem>
 
-                    </ListView>
-                    <Separator Grid.Row="1" Margin="0" VerticalAlignment="Bottom"/>
+                        </ListView>
+                        
+                        <Separator Margin="0" VerticalAlignment="Bottom"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="7.5,10" HorizontalAlignment="Right">
+                            <TextBlock Text="Archiving" FontFamily="Comic Sans MS, Verdana" FontSize="17"  
+                                       VerticalAlignment="Center" Margin="10,0"
+                                       Foreground="{StaticResource SecondaryHueMidBrush}"/>
+                            <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                                          IsChecked="{Binding IsArchiving}"/>
+                        </StackPanel>
+                    </StackPanel>
                 </Grid>
             </Border>
 
