@@ -252,7 +252,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             set
             {
                 if (value)
-                    _archiver = PluginLoader.Plugins[PluginType.Archiver].FirstOrDefault() as IArchiver;
+                    _archiver = PluginLoader.GetInstance().Plugins[PluginType.Archiver]?.FirstOrDefault() as IArchiver;
                 else
                     _archiver = null;
 

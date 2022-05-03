@@ -9,9 +9,9 @@ using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 
 namespace yakov.OOP.EnhancedPaint.Plugins
 {
-    public static class PluginLoader
+    public class PluginLoader
     {
-        static PluginLoader()
+        private PluginLoader()
         {
             foreach (var pluginPath in LoadingPlugins.Paths)
             {
@@ -19,9 +19,19 @@ namespace yakov.OOP.EnhancedPaint.Plugins
             }
         }
 
-        public static Dictionary<PluginType, List<IPlugin>> Plugins = new Dictionary<PluginType, List<IPlugin>>();
+        private static PluginLoader _loader;
 
-        public static void SetPlugin(string pluginPath)
+        public static PluginLoader GetInstance()
+        {
+            if (_loader == null)
+                _loader = new PluginLoader();
+
+            return _loader;
+        }
+
+        public Dictionary<PluginType, List<IPlugin>> Plugins = new Dictionary<PluginType, List<IPlugin>>();
+
+        public void SetPlugin(string pluginPath)
         {
             Assembly plugin;
             PluginType pluginType = PluginType.Unknown;
