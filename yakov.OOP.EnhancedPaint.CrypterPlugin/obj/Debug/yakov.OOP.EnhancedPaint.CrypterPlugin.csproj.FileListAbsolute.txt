@@ -1,0 +1,9 @@
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\bin\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\bin\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\bin\Debug\yakov.OOP.EnhancedPaint.Plugins.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\bin\Debug\yakov.OOP.EnhancedPaint.Plugins.pdb
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\obj\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.csproj.AssemblyReference.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\obj\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.csproj.CoreCompileInputs.cache
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\obj\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.csproj.CopyComplete
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\obj\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.dll
+C:\Учёба else\OOP NEW\yakov.OOP.EnhancedPaint\yakov.OOP.EnhancedPaint.CrypterPlugin\obj\Debug\yakov.OOP.EnhancedPaint.CrypterPlugin.pdb
