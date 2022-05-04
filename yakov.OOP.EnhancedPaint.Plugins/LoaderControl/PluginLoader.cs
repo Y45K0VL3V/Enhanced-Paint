@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 
-namespace yakov.OOP.EnhancedPaint.Plugins
+namespace yakov.OOP.EnhancedPaint.Plugins.LoaderControl
 {
-    public class PluginLoader
+    internal class PluginLoader
     {
         private PluginLoader()
         {
