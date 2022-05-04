@@ -12,7 +12,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins.LoaderControl
         private PluginLoader _pluginLoader = PluginLoader.GetInstance();
         public override IPlugin GetPlugin(PluginType pluginType)
         {
-            return _pluginLoader.Plugins[pluginType].FirstOrDefault();
+            return _pluginLoader.Plugins[pluginType].First();
         }
     }
 }

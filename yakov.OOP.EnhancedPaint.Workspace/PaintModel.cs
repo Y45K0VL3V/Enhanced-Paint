@@ -98,7 +98,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
                 {
                     if (crypter != null)
                     {
-                        serializedFigures = crypter.Encrypt(10533, 10000, (byte[])serializedFigures.Clone());
+                        serializedFigures = crypter.Encrypt(1857, 100, (byte[])serializedFigures.Clone());
                     }
 
                     if (archiver != null)
@@ -131,7 +131,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
                     if (crypter != null)
                     {
-                        serializedFigures = crypter.Decrypt(3, 3511, 10000, (byte[])serializedFigures.Clone());
+                        serializedFigures = crypter.Decrypt(619, 3, 100, (byte[])serializedFigures.Clone());
                     }
 
                     var tmpFigures = serializer.Deserialize(Encoding.UTF8.GetString(serializedFigures));

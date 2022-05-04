@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace yakov.OOP.EnhancedPaint.Plugins.Interfaces
 {
-    public interface ICrypter
+    public interface ICrypter: IPlugin
     {
         byte[] Encrypt(BigInteger publicKeyN, BigInteger publicKeyB, byte[] inputData);
 

@@ -12,6 +12,8 @@ namespace yakov.OOP.EnhancedPaint.CrypterPlugin
     [Plugin(PluginType.Crypter)]
     public class RabinCrypter : ICrypter
     {
+        public string Path { get; set; }
+
         public byte[] Encrypt(BigInteger publicKeyN, BigInteger publicKeyB, byte[] inputData)
         {
             if (publicKeyN <= publicKeyB)
