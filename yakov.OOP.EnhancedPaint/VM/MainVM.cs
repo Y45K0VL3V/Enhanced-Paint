@@ -14,6 +14,7 @@ using System.Drawing;
 using yakov.OOP.EnhancedPaint.Serialization;
 using yakov.OOP.EnhancedPaint.Plugins;
 using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
+using yakov.OOP.EnhancedPaint.Plugins.LoaderControl;
 
 namespace yakov.OOP.EnhancedPaint.VM
 {
@@ -245,6 +246,10 @@ namespace yakov.OOP.EnhancedPaint.VM
             }
         }
 
+        #region Saving control
+
+        private LoaderInteract _plugins = new LoaderAdapter();
+
         private bool _isArchiving = false;
         public bool IsArchiving
         {
@@ -252,7 +257,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             set
             {
                 if (value)
-                    _archiver = PluginLoader.GetInstance().Plugins[PluginType.Archiver]?.FirstOrDefault() as IArchiver;
+                    _archiver = _plugins.GetPlugin(PluginType.Archiver) as IArchiver;
                 else
                     _archiver = null;
 
@@ -286,6 +291,8 @@ namespace yakov.OOP.EnhancedPaint.VM
                 }));
             }
         }
+
+        #endregion
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
