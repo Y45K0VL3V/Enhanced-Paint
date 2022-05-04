@@ -5,12 +5,14 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using yakov.OOP.EnhancedPaint.Plugins;
+using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 
 namespace yakov.OOP.EnhancedPaint.CrypterPlugin
 {
-    public class RabinCrypter
+    [Plugin(PluginType.Crypter)]
+    public class RabinCrypter : ICrypter
     {
-        public static byte[] Encrypt(BigInteger publicKeyN, BigInteger publicKeyB, byte[] inputData)
+        public byte[] Encrypt(BigInteger publicKeyN, BigInteger publicKeyB, byte[] inputData)
         {
             if (publicKeyN <= publicKeyB)
                 throw new Exception("Public key B must be lower, than N");
@@ -30,7 +32,7 @@ namespace yakov.OOP.EnhancedPaint.CrypterPlugin
 
         private static long s_currEncryptedPos;
 
-        public static byte[] Decrypt(BigInteger privateKeyQ, BigInteger privateKeyP, BigInteger publicKeyB, byte[] encryptedData)
+        public byte[] Decrypt(BigInteger privateKeyQ, BigInteger privateKeyP, BigInteger publicKeyB, byte[] encryptedData)
         {
             s_currEncryptedPos = 0;
             BigInteger publicKeyN = privateKeyP * privateKeyQ;

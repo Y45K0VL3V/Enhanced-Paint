@@ -10,6 +10,5 @@ namespace yakov.OOP.EnhancedPaint.Plugins.Interfaces
     {
         string Path { get; set; }
 
-
     }
 }
