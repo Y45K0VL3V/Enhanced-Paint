@@ -234,6 +234,15 @@
                             <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
                                           IsChecked="{Binding IsArchiving}"/>
                         </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="7.5,10" HorizontalAlignment="Right">
+                            <TextBlock Text="Crypting" FontFamily="Comic Sans MS, Verdana" FontSize="17"  
+                                       VerticalAlignment="Center" Margin="10,0"
+                                       Foreground="{StaticResource SecondaryHueMidBrush}"/>
+                            <ToggleButton Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                                          IsChecked="{Binding IsCrypting}"/>
+                        </StackPanel>
+
                     </StackPanel>
                 </Grid>
             </Border>

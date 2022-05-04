@@ -266,7 +266,24 @@ namespace yakov.OOP.EnhancedPaint.VM
             }
         }
 
+        private bool _isCrypting = false;
+        public bool IsCrypting
+        {
+            get => _isCrypting;
+            set
+            {
+                if (value)
+                    _crypter = _plugins.GetPlugin(PluginType.Crypter) as ICrypter;
+                else
+                    _crypter = null;
+
+                _isCrypting = value;
+                OnPropertyChanged("IsCrypting");
+            }
+        }
+
         private IArchiver _archiver = null;
+        private ICrypter _crypter = null;
 
         private RelayCommand _loadFigures;
         public RelayCommand LoadFigures
@@ -275,7 +292,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _loadFigures ?? (_loadFigures = new RelayCommand(obj =>
                 {
-                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), _archiver);
+                    DrawingControl.LoadFigures(new FigureSerializer<FigureBase>(), _archiver, _crypter);
                 }));
             }
         }
@@ -287,7 +304,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             {
                 return _saveFigures ?? (_saveFigures = new RelayCommand(obj =>
                 {
-                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), _archiver);
+                    DrawingControl.SaveFigures(new FigureSerializer<FigureBase>(), _archiver, _crypter);
                 }));
             }
         }

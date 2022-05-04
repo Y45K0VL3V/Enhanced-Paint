@@ -84,7 +84,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         #endregion
 
         #region Figures backup processing.
-        public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver)
+        public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, ICrypter crypter)
         {
             if (serializer == null)
                 return;
@@ -96,6 +96,11 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
                 try
                 {
+                    if (crypter != null)
+                    {
+                        serializedFigures = crypter.Encrypt(10533, 10000, (byte[])serializedFigures.Clone());
+                    }
+
                     if (archiver != null)
                     {
                         archiver.Archive(ref serializedFigures);
@@ -107,7 +112,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             }
         }
 
-        public void LoadFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver)
+        public void LoadFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, ICrypter crypter)
         {
             if (serializer == null)
                 return;
@@ -122,6 +127,11 @@ namespace yakov.OOP.EnhancedPaint.Workspace
                     if (archiver != null)
                     {
                         archiver.Dearchive(ref serializedFigures);
+                    }
+
+                    if (crypter != null)
+                    {
+                        serializedFigures = crypter.Decrypt(3, 3511, 10000, (byte[])serializedFigures.Clone());
                     }
 
                     var tmpFigures = serializer.Deserialize(Encoding.UTF8.GetString(serializedFigures));
