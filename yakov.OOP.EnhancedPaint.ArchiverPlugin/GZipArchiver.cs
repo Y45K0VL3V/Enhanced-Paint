@@ -14,7 +14,7 @@ namespace yakov.OOP.EnhancedPaint.ArchiverPlugin
     [Plugin(PluginType.Archiver)]
     public class GZipArchiver : IArchiver
     {
-        public string Path { get; set; }
+        public string Name { get; set; } = "GZip Archiver";
 
         public void Archive(ref byte[] data)
         {
