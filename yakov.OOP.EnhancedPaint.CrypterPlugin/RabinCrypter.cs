@@ -10,7 +10,7 @@ using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 namespace yakov.OOP.EnhancedPaint.CrypterPlugin
 {
     [Plugin(PluginType.Crypter)]
-    public class RabinCrypter : ICrypter
+    public class RabinCrypter : IRabinCrypter
     {
         public string Name { get; set; } = "Rabin crypt";
 

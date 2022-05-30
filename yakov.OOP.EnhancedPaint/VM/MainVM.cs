@@ -273,7 +273,7 @@ namespace yakov.OOP.EnhancedPaint.VM
             set
             {
                 if (value)
-                    _crypter = _plugins.GetPlugin(PluginType.Crypter) as ICrypter;
+                    _crypter = _plugins.GetPlugin(PluginType.Crypter) as IRabinCrypter;
                 else
                     _crypter = null;
 
@@ -283,7 +283,7 @@ namespace yakov.OOP.EnhancedPaint.VM
         }
 
         private IArchiver _archiver = null;
-        private ICrypter _crypter = null;
+        private IRabinCrypter _crypter = null;
 
         private RelayCommand _loadFigures;
         public RelayCommand LoadFigures

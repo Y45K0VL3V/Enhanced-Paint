@@ -42,11 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ICrypter.cs" />
+    <Compile Include="Interfaces\IRabinCrypter.cs" />
     <Compile Include="Interfaces\IPlugin.cs" />
     <Compile Include="LoaderControl\LoaderAdapter.cs" />
     <Compile Include="LoaderControl\LoaderInteract.cs" />
-    <Compile Include="LoadingPlugins.cs" />
     <Compile Include="LoaderControl\PluginLoader.cs" />
     <Compile Include="PluginAttribute.cs" />
     <Compile Include="PluginType.cs" />

@@ -37,7 +37,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         public void ClearDrawspace() => Drawspace.Children.Clear();
 
 
-        #region Tools proxy.
+        #region Tools interface.
 
         public FigureBase CreateFigure(FigureType figureType, System.Drawing.Point canvasPoint)
         {
@@ -84,7 +84,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         #endregion
 
         #region Figures backup processing.
-        public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, ICrypter crypter)
+        public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, IRabinCrypter crypter)
         {
             if (serializer == null)
                 return;
@@ -112,7 +112,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
             }
         }
 
-        public void LoadFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, ICrypter crypter)
+        public void LoadFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, IRabinCrypter crypter)
         {
             if (serializer == null)
                 return;

@@ -11,9 +11,11 @@ namespace yakov.OOP.EnhancedPaint.Plugins.LoaderControl
 {
     internal class PluginLoader
     {
+        private string _pluginsSourcePath = Environment.CurrentDirectory + @"\Plugins"; 
+
         private PluginLoader()
         {
-            foreach (var pluginPath in LoadingPlugins.Paths)
+            foreach (var pluginPath in Directory.GetFiles(_pluginsSourcePath))
             {
                 SetPlugin(pluginPath);
             }
@@ -52,10 +54,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins.LoaderControl
                     object[] attrs = currType.GetCustomAttributes(typeof(PluginAttribute), true);
                     if (attrs.Length > 0)
                     {
-                        foreach (PluginAttribute attr in attrs)
-                        {
-                            pluginType = attr.Type;
-                        }
+                        pluginType = (attrs.Last() as PluginAttribute).Type;
                         pluginClass = currType;
                     
                         if (pluginType == PluginType.Unknown)
