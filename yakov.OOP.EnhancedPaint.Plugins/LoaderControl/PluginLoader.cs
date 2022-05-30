@@ -17,7 +17,10 @@ namespace yakov.OOP.EnhancedPaint.Plugins.LoaderControl
         {
             foreach (var pluginPath in Directory.GetFiles(_pluginsSourcePath))
             {
-                SetPlugin(pluginPath);
+                if (pluginPath.EndsWith(".dll"))
+                {
+                    SetPlugin(pluginPath);
+                }
             }
         }
 

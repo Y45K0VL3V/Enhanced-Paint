@@ -9,7 +9,7 @@ namespace yakov.OOP.EnhancedPaint.Plugins.LoaderControl
 {
     public abstract class LoaderInteract
     {
-        public abstract IPlugin GetPlugin(PluginType pluginType);
+        public abstract IPlugin GetPlugin(PluginType pluginType, string pluginName);
 
     }
 }

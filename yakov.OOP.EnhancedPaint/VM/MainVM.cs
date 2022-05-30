@@ -256,12 +256,17 @@ namespace yakov.OOP.EnhancedPaint.VM
             get => _isArchiving;
             set
             {
+                _isArchiving = value;
                 if (value)
-                    _archiver = _plugins.GetPlugin(PluginType.Archiver) as IArchiver;
+                {
+                    _archiver = _plugins.GetPlugin(PluginType.Archiver, "GZip Archiver") as IArchiver;
+                    
+                    if (_archiver == null)
+                        IsArchiving = false;
+                }
                 else
                     _archiver = null;
 
-                _isArchiving = value;
                 OnPropertyChanged("IsArchiving");
             }
         }
@@ -272,12 +277,16 @@ namespace yakov.OOP.EnhancedPaint.VM
             get => _isCrypting;
             set
             {
+                _isCrypting = value;
                 if (value)
-                    _crypter = _plugins.GetPlugin(PluginType.Crypter) as IRabinCrypter;
+                {
+                    _crypter = _plugins.GetPlugin(PluginType.Crypter, "Rabin crypt") as IRabinCrypter;
+                    if (_crypter == null)
+                        IsCrypting = false;
+                }
                 else
                     _crypter = null;
 
-                _isCrypting = value;
                 OnPropertyChanged("IsCrypting");
             }
         }
