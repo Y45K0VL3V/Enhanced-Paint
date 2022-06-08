@@ -15,6 +15,7 @@ using yakov.OOP.EnhancedPaint.Plugins.Interfaces;
 using System.IO;
 using Microsoft.Win32;
 using yakov.OOP.EnhancedPaint.Plugins;
+using System.Numerics;
 
 namespace yakov.OOP.EnhancedPaint.Workspace
 {
@@ -84,6 +85,10 @@ namespace yakov.OOP.EnhancedPaint.Workspace
         #endregion
 
         #region Figures backup processing.
+
+        private BigInteger _privateKeyQ = 619;
+        private BigInteger _privateKeyP = 3;
+        private BigInteger _publicKeyB = 100;
         public void SaveFigures(IFigureSerializer<FigureBase> serializer, IArchiver archiver, IRabinCrypter crypter)
         {
             if (serializer == null)
@@ -98,7 +103,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
                 {
                     if (crypter != null)
                     {
-                        serializedFigures = crypter.Encrypt(1857, 100, (byte[])serializedFigures.Clone());
+                        serializedFigures = crypter.Encrypt(_privateKeyP*_privateKeyQ, _publicKeyB, (byte[])serializedFigures.Clone());
                     }
 
                     if (archiver != null)
@@ -131,7 +136,7 @@ namespace yakov.OOP.EnhancedPaint.Workspace
 
                     if (crypter != null)
                     {
-                        serializedFigures = crypter.Decrypt(619, 3, 100, (byte[])serializedFigures.Clone());
+                        serializedFigures = crypter.Decrypt(_privateKeyQ, _privateKeyP, _publicKeyB, (byte[])serializedFigures.Clone());
                     }
 
                     var tmpFigures = serializer.Deserialize(Encoding.UTF8.GetString(serializedFigures));

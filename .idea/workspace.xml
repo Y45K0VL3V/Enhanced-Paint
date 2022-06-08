@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="df2b94d4-c157-4494-a21e-075de9d7bc99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/yakov.OOP.EnhancedPaint/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/yakov.OOP.EnhancedPaint/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/bin/Debug/yakov.OOP.EnhancedPaint.CrypterPlugin.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/bin/Debug/yakov.OOP.EnhancedPaint.Plugins.dll" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/bin/Debug/yakov.OOP.EnhancedPaint.Plugins.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/bin/Debug/yakov.OOP.EnhancedPaint.Plugins.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/bin/Debug/yakov.OOP.EnhancedPaint.Plugins.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/obj/Debug/yakov.OOP.EnhancedPaint.CrypterPlugin.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.CrypterPlugin/obj/Debug/yakov.OOP.EnhancedPaint.CrypterPlugin.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/PaintModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/PaintModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/bin/Debug/yakov.OOP.EnhancedPaint.Workspace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/bin/Debug/yakov.OOP.EnhancedPaint.Workspace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/bin/Debug/yakov.OOP.EnhancedPaint.Workspace.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/bin/Debug/yakov.OOP.EnhancedPaint.Workspace.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/obj/Debug/yakov.OOP.EnhancedPaint.Workspace.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/obj/Debug/yakov.OOP.EnhancedPaint.Workspace.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/obj/Debug/yakov.OOP.EnhancedPaint.Workspace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/obj/Debug/yakov.OOP.EnhancedPaint.Workspace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/obj/Debug/yakov.OOP.EnhancedPaint.Workspace.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint.Workspace/obj/Debug/yakov.OOP.EnhancedPaint.Workspace.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.Workspace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.Workspace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.Workspace.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.Workspace.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.dll" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/bin/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/obj/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/obj/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/obj/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.dll" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/obj/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/obj/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/yakov.OOP.EnhancedPaint/obj/Debug/net6.0-windows/yakov.OOP.EnhancedPaint.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2AI65qAODXed0Ek42b1jQiSIxCy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df2b94d4-c157-4494-a21e-075de9d7bc99" name="Default Changelist" comment="" />
+      <created>1654684573351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654684573351</updated>
+    </task>
+    <servers />
+  </component>
+</project>
